@@ -1,0 +1,144 @@
+-----------Exception Details on  25-05-2022 11:23:24 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 25-05-2022 11:23:24 AM
+
+Error Line No : line 39
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  25-05-2022 11:30:47 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 25-05-2022 11:30:47 AM
+
+Error Line No : line 24
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/User/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  25-05-2022 11:31:22 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 25-05-2022 11:31:22 AM
+
+Error Line No : line 24
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/User/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  25-05-2022 11:33:01 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 25-05-2022 11:33:01 AM
+
+Error Line No : line 39
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  25-05-2022 12:13:59 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 25-05-2022 12:13:59 PM
+
+Error Line No : ine 181
+
+Error Message: NullReferenceException
+
+Exception Type: System.NullReferenceException
+
+Error Location : Object reference not set to an instance of an object.
+
+ Error Page Url: http://localhost:6492/User/Update
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  25-05-2022 12:15:05 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 25-05-2022 12:15:05 PM
+
+Error Line No : ine 181
+
+Error Message: NullReferenceException
+
+Exception Type: System.NullReferenceException
+
+Error Location : Object reference not set to an instance of an object.
+
+ Error Page Url: http://localhost:6492/User/Update
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

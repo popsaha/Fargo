@@ -1,0 +1,72 @@
+-----------Exception Details on  05-04-2022 11:35:17 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 05-04-2022 11:35:17 PM
+
+Error Line No : line 39
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  05-04-2022 11:36:19 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 05-04-2022 11:36:19 PM
+
+Error Line No : line 39
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  05-04-2022 11:37:54 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 05-04-2022 11:37:54 PM
+
+Error Line No : line 39
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

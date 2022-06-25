@@ -1,0 +1,72 @@
+-----------Exception Details on  16-06-2022 12:34:40 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 16-06-2022 12:34:40 PM
+
+Error Line No : line 60
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spReport'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  16-06-2022 12:34:42 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 16-06-2022 12:34:42 PM
+
+Error Line No : line 95
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spReport'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  16-06-2022 02:39:44 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 16-06-2022 02:39:44 PM
+
+Error Line No : line 67
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+
+ Error Page Url: http://localhost:6492/api/LoginAPI/ForgotPassword
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

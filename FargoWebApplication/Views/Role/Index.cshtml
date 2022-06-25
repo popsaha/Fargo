@@ -1,0 +1,240 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Fargo_Models.RoleModel
+<style>
+    .fontDesign {
+        color:#666666;
+        font-weight:bold;
+        font-size:13px
+    }
+</style>
+
+<style type="text/css">
+    #loader {
+        background-color: transparent;
+        background: transparent;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: white;
+        z-index: 10000;
+    }
+</style>
+
+@if (ViewBag.Message != null)
+{ 
+<script>alert('@ViewBag.Message');</script>
+}
+
+<div class="main-body">
+    <div class="page-wrapper">
+
+        
+        <div class="page-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-block primary-breadcrumb" style="height:12px; background-color:#074434">
+                            <div class="breadcrumb-header">
+                                <h6><label style="color:white">Role Master</label></h6>
+                            </div>
+                        </div>
+                        <div class="card-block">
+                            
+                            @using (Html.BeginForm("Index", "Role", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmRole" }))
+                            {
+                                @Html.HiddenFor(x => x.ROLE_ID, new { @id = "hdnRoleId" });
+                                <input type="hidden" id="hdnRoleId" />
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="pcoded-mtext fontDesign">Role Name</span>
+                                            @Html.TextBoxFor(x => x.ROLE_NAME, new { @class="form-control", @id="txtRoleName"})
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="pcoded-mtext fontDesign">Description</span>
+                                            @Html.TextBoxFor(x => x.DESCRIPTION, new { @class = "form-control", @id = "txtDescription" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12" align="left">
+                                        @if (ViewBag.UserId == 1)
+                                        {
+                                            <div>
+                                                <input type="submit" class="btn btn-success" id="btnSubmit" value="Submit" name="Submit" onclick="return ValidateInputs();">
+                                                &nbsp;
+                                                <input type="submit" class="btn btn-primary" id="btnUpdate" value="Update" name="Update" onclick="return ValidateInputs();">
+                                                &nbsp;
+                                                <button type="button" class="btn btn-warning" id="btnReset" onclick="Reset()"><i class="fa fa-refresh"></i> Reset</button>
+                                            </div>
+                                        }
+                                        else
+                                        { 
+                                            <div>
+                                                <input type="submit" class="btn btn-success" id="btnSubmit" value="Submit" name="Submit" onclick="alert('Please contact to administrator.'); return false;">
+                                                &nbsp;
+                                                <input type="submit" class="btn btn-primary" id="btnUpdate" value="Update" name="Update" onclick="alert('Please contact to administrator.'); return false;">
+                                                &nbsp;
+                                                <button type="button" class="btn btn-warning" id="btnReset" onclick="Reset()"><i class="fa fa-refresh"></i> Reset</button>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page-body start -->
+        <div class="page-body">
+            <!-- Basic table card start -->
+            <div class="card">
+                <div class="card-block table-border-style">
+                    <div class="table-responsive">            
+                        <table id="tblRole" class="table table-hover">
+                            <thead style="background-color:#074434; color:white">
+                                <tr style="background-color:#074434">
+                                    <td><b><label style="color:white">SL No.</label></b></td>
+                                    <td><b><label style="color:white">Role Name</label></b></td>
+                                    <td><b><label style="color:white">Role Code</label></b></td>
+                                    <td><b><label style="color:white">Description</label></b></td>                                   
+                                    <td><b><label style="color:white">Action</label></b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{ int Count = 0;}
+                                @foreach (var role in ViewBag.LstRoles)
+                                {
+                                    Count = Count + 1;
+                                    <tr id="tblRow_@role.ROLE_ID">
+                                        <td>@Count</td>
+                                        <td><label class="clsRole">@role.ROLE_NAME</label></td>
+                                        <td>@role.ROLE_CODE</td>  
+                                        <td>@role.DESCRIPTION</td>  
+                                        @if (ViewBag.UserId == 1) { 
+                                            <td> <span onclick="Edit('@role.ROLE_ID')" style="cursor:pointer" title="Edit"><i class="fa fa-pencil"></i></span>&nbsp;&nbsp;&nbsp;<span onclick="return Delete('@role.ROLE_ID')" style="cursor:pointer" title="Delete"><i class="fa fa-trash"></i></span></td>
+                                        }
+                                        else
+                                        {
+                                         <td> <span onclick="alert('Please contact to administrator.')" style="cursor:pointer" title="Edit"><i class="fa fa-pencil"></i></span>&nbsp;&nbsp;&nbsp;<span onclick="alert('Please contact to administrator.')" style="cursor:pointer" title="Delete"><i class="fa fa-trash"></i></span></td>
+                                        }
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+</div>
+                </div>
+            </div>
+            <!-- Basic table card end -->
+        </div>
+        <!-- Page-body end -->
+    </div>
+</div>
+
+<div id="loader" style="text-align:center; padding-top:20%;">
+    <span style="font-size:22px;color:#dce3de;">Please wait...</span>
+</div>
+<div id="styleSelector"></div>
+<script type="text/javascript" src="~/Assets/js/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        Reset();
+        const dataTable = new simpleDatatables.DataTable("#tblRole");
+        
+    });
+    
+    function ValidateInputs()
+    {
+        var IsValid = true;
+        var RoleName = $('#txtRoleName').val();
+        var Description = $('#txtDescription').val();
+        if (RoleName.trim() == "") {
+            alert("Please enter role name.");
+            return false;
+        }
+        if (Description.trim() == "") {
+            alert("Please provide description for role.");
+            return false;
+        }
+
+        $(".clsRole").each(function () {
+            if ($(this).text() == RoleName)
+            {
+                alert("Duplicate role name found !");
+                $('#txtRoleName').focus();
+                IsValid = false;
+            }
+        });
+        return IsValid;
+    }
+
+    function Edit(ROLE_ID)
+    {
+        $('#loader').show();
+        $.ajax({
+            type: "POST",
+            url: "/Role/Edit?ROLE_ID=" + ROLE_ID,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                $('#hdnRoleId').val(data.ROLE_ID);
+                $('#txtRoleName').val(data.ROLE_NAME);
+                $('#txtDescription').val(data.DESCRIPTION);
+                $('#btnSubmit').hide();
+                $('#btnUpdate').show();
+                $('#loader').hide();
+            },
+            error: function (response) {
+                alert("Some problem occured! Try again.");
+            }
+        });
+    }
+
+    function Delete(ROLE_ID)
+    {
+        var result = confirm('Are you sure want to delete?');
+        if (result == true)
+        {
+            $('#loader').show();
+            $.ajax({
+                type: "POST",
+                url: "/Role/Delete?ROLE_ID=" + ROLE_ID,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    alert(result);
+                    window.location.reload();
+                },
+                error: function (response) {
+                    alert("Some problem occured! Try again.");
+                }
+            });
+        }
+    }
+
+    function Reset()
+    {
+        $('#hdnRoleId').val('');
+        $('#txtRoleName').val('');
+        $('#txtDescription').val('');
+        $('#btnSubmit').show();
+        $('#btnUpdate').hide();
+    }
+</script>
+
+
+

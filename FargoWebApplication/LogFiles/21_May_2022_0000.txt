@@ -1,0 +1,120 @@
+-----------Exception Details on  21-05-2022 03:48:32 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 21-05-2022 03:48:32 PM
+
+Error Line No : line 39
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  21-05-2022 03:58:23 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 21-05-2022 03:58:23 PM
+
+Error Line No : line 24
+
+Error Message: EntityCommandExecutionException
+
+Exception Type: System.Data.Entity.Core.EntityCommandExecutionException
+
+Error Location : An error occurred while executing the command definition. See the inner exception for details.
+
+ Error Page Url: http://localhost:6492/User/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  21-05-2022 04:37:44 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 21-05-2022 04:37:44 PM
+
+Error Line No : line 39
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  21-05-2022 05:42:38 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 21-05-2022 05:42:38 PM
+
+Error Line No : line 39
+
+Error Message: EntityCommandExecutionException
+
+Exception Type: System.Data.Entity.Core.EntityCommandExecutionException
+
+Error Location : An error occurred while executing the command definition. See the inner exception for details.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  21-05-2022 05:43:43 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 21-05-2022 05:43:43 PM
+
+Error Line No : line 39
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

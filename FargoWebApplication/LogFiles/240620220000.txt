@@ -1,0 +1,368 @@
+-----------Exception Details on  24-06-2022 02:41:02 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 02:41:02 PM
+
+Error Line No : line 41
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spStore'.
+
+ Error Page Url: http://localhost:6492/Store/Tracking
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  24-06-2022 03:15:14 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 03:15:14 PM
+
+Error Line No : line 23
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid column name 'LAST_LOGGEDIN_ON'.
+Invalid column name 'LAST_LOGGEDOUT_ON'.
+Invalid column name 'LAST_LOGGEDIN_ON'.
+
+ Error Page Url: http://localhost:6492/User/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  24-06-2022 03:15:47 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 03:15:47 PM
+
+Error Line No : line 23
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid column name 'LAST_LOGGEDIN_ON'.
+Invalid column name 'LAST_LOGGEDOUT_ON'.
+Invalid column name 'LAST_LOGGEDIN_ON'.
+
+ Error Page Url: http://localhost:6492/User/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  24-06-2022 03:21:56 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 03:21:56 PM
+
+Error Line No : line 23
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid column name 'LAST_LOGGEDIN_ON'.
+Invalid column name 'LAST_LOGGEDOUT_ON'.
+Invalid column name 'LAST_LOGGEDIN_ON'.
+
+ Error Page Url: http://localhost:6492/User/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  24-06-2022 03:33:47 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 03:33:47 PM
+
+Error Line No : line 23
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid column name 'LAST_LOGGEDIN_ON'.
+Invalid column name 'LAST_LOGGEDOUT_ON'.
+Invalid column name 'LAST_LOGGEDIN_ON'.
+
+ Error Page Url: http://localhost:6492/User/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  24-06-2022 07:51:13 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 07:51:13 PM
+
+Error Line No : ine 113
+
+Error Message: IndexOutOfRangeException
+
+Exception Type: System.IndexOutOfRangeException
+
+Error Location : ROLE_CODE
+
+ Error Page Url: http://localhost:6492/STORE/Edit?STORE_ID=1
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  24-06-2022 07:51:17 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 07:51:17 PM
+
+Error Line No : ine 113
+
+Error Message: IndexOutOfRangeException
+
+Exception Type: System.IndexOutOfRangeException
+
+Error Location : ROLE_CODE
+
+ Error Page Url: http://localhost:6492/STORE/Edit?STORE_ID=2
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  24-06-2022 07:51:22 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 07:51:22 PM
+
+Error Line No : ine 113
+
+Error Message: IndexOutOfRangeException
+
+Exception Type: System.IndexOutOfRangeException
+
+Error Location : ROLE_CODE
+
+ Error Page Url: http://localhost:6492/STORE/Edit?STORE_ID=3
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  24-06-2022 08:11:47 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 08:11:47 PM
+
+Error Line No : ine 113
+
+Error Message: IndexOutOfRangeException
+
+Exception Type: System.IndexOutOfRangeException
+
+Error Location : ROLE_CODE
+
+ Error Page Url: http://localhost:6492/STORE/Edit?STORE_ID=1
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  24-06-2022 08:24:02 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 08:24:02 PM
+
+Error Line No : line 26
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+
+ Error Page Url: http://localhost:6492/Store/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  24-06-2022 08:24:30 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 08:24:30 PM
+
+Error Line No : line 78
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+
+ Error Page Url: http://localhost:6492/Store/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  24-06-2022 08:25:40 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 08:25:40 PM
+
+Error Line No : line 78
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+
+ Error Page Url: http://localhost:6492/Store/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  24-06-2022 09:11:57 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 09:11:57 PM
+
+Error Line No : line 78
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+
+ Error Page Url: http://localhost:6492/Store/Tracking
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  24-06-2022 10:47:03 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 10:47:03 PM
+
+Error Line No : line 23
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  24-06-2022 10:47:03 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 24-06-2022 10:47:03 PM
+
+Error Line No : line 46
+
+Error Message: NullReferenceException
+
+Exception Type: System.NullReferenceException
+
+Error Location : Object reference not set to an instance of an object.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

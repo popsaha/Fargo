@@ -1,0 +1,72 @@
+-----------Exception Details on  16-05-2022 05:19:41 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 16-05-2022 05:19:41 PM
+
+Error Line No : line 48
+
+Error Message: NullReferenceException
+
+Exception Type: System.NullReferenceException
+
+Error Location : Object reference not set to an instance of an object.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  16-05-2022 05:41:06 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 16-05-2022 05:41:06 PM
+
+Error Line No : line 96
+
+Error Message: NullReferenceException
+
+Exception Type: System.NullReferenceException
+
+Error Location : Object reference not set to an instance of an object.
+
+ Error Page Url: http://localhost:6492/User/Create
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  16-05-2022 06:54:08 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 16-05-2022 06:54:08 PM
+
+Error Line No : line 41
+
+Error Message: TargetException
+
+Exception Type: System.Reflection.TargetException
+
+Error Location : Non-static method requires a target.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

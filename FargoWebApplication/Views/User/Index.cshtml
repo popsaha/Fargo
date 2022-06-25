@@ -1,0 +1,689 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .fontDesign {
+        color: #666666;
+        font-weight: bold;
+        font-size:13px
+    }
+</style>
+
+<style type="text/css">
+    #loader {
+        background-color:transparent;
+        background:transparent;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../../Images/480px-Loader.gif');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: white;
+        z-index: 10000;
+    }
+</style>
+
+<div class="main-body">
+    <div class="page-wrapper">
+
+       
+        <div class="page-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-block primary-breadcrumb" style="height:12px; background-color:#074434">
+                            <div class="breadcrumb-header">
+                                <h6><label style="color:white">User Master</label></h6>
+                            </div>
+                        </div>
+                        <div class="card-block">
+                          
+                            @using (Html.BeginForm("Save", "User", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmUser" }))
+                            {
+                                <input type="hidden" id="hdnUserId" />
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>First Name<span class="text-danger" style="color:red"> *</span></label>
+                                            <input type="text" class="form-control" id="txtFirstName" name="_FirstName">
+                                            <span style="color:red;" id="divFirstName"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>Last Name <span class="text-danger" style="color:red"> *</span></label>
+                                            <input type="text" class="form-control" id="txtLastName" name="_LastName">
+                                            <span style="color:red;" id="divLastName"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>EmailId <span class="text-danger" style="color:red"> *</span></label>
+                                            <input type="email" class="form-control" id="txtEmailId" name="_EmailId">
+                                            <span style="color:red;" id="divEmailId"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>Gender <span class="text-danger" style="color:red"> *</span></label>
+                                            <select class="form-control select2" style="width: 100%;" id="ddlGender">
+                                                <option value="0">--SELECT--</option>
+                                                <option value="Male">MALE</option>
+                                                <option value="Female">FEMALE</option>
+                                            </select>
+                                            <span style="color:red;" id="divGender"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>Street<span class="text-danger" style="color:red"> </span></label>
+                                            <input type="text" class="form-control" id="txtStreet">
+                                            <span style="color:red;" id="divStreet"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>Landmark<span class="text-danger" style="color:red"> </span></label>
+                                            <input type="text" class="form-control" id="txtLandmark">
+                                            <span style="color:red;" id="divLandmark"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>City<span class="text-danger" style="color:red"> *</span></label>
+                                            <input type="text" class="form-control" id="txtCity">
+                                            <span style="color:red;" id="divCity"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>District<span class="text-danger" style="color:red"> </span></label>
+                                            <input type="text" class="form-control" id="txtDistrict">
+                                            <span style="color:red;" id="divDistrict"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>Pin Code<span class="text-danger" style="color:red"> *</span></label>
+                                            <input type="text" class="form-control" id="txtPinCode" maxlength="6">
+                                            <span style="color:red;" id="divPinCode"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>Country<span class="text-danger" style="color:red"> *</span></label>
+                                            <select class="form-control select2" style="width: 100%;" id="ddlCountry">
+                                                @if (ViewBag.LstCountry != null)
+                                                {
+                                                    <option value="0">--SELECT--</option>
+                                                    foreach (var country in ViewBag.LstCountry)
+                                                {
+                                                <option value="@country.COUNTRY_ID">@country.COUNTRY_NAME</option>
+                                                }
+                                                }
+                                            </select>
+                                            <span style="color:red;" id="divCountry"></span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>State<span class="text-danger" style="color:red"> *</span></label>
+                                            <select class="form-control select2" style="width: 100%;" id="ddlState">
+                                                @if (ViewBag.LstStates != null)
+                                                {
+                                                <option value="0">--SELECT--</option>
+                                                    foreach (var state in ViewBag.LstStates)
+                                                {
+                                                <option value="@state.STATE_ID">@state.STATE_NAME</option>
+                                                }
+                                                }
+                                            </select>
+                                            <span style="color:red;" id="divState"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>Date of Birth<span class="text-danger" style="color:red"> *</span></label>
+                                            <input type="text" class="form-control datetimepicker" id="txtDateOfBirth">
+                                            <span style="color:red;" id="divDateOfBirth"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>Contact No<span class="text-danger" style="color:red"> *</span></label>
+                                            <input type="text" class="form-control" id="txtContactNo" maxlength="10">
+                                            <span style="color:red;" id="divContactNo"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>Alternate Contact No<span class="text-danger" style="color:red"> </span></label>
+                                            <input type="text" class="form-control" id="txtAlternateContactNo" maxlength="10">
+                                            <span style="color:red;" id="divAlternateContactNo"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>Store <span class="text-danger" style="color:red"> *</span></label>
+                                            <select class="form-control select2" style="width: 100%;" id="ddlStore">
+                                                @if (ViewBag.LstStores != null)
+                                                {
+                                                    <option value="0">--SELECT--</option>
+                                                    foreach (var stores in ViewBag.LstStores)
+                                                    {
+                                                        <option value="@stores.STORE_ID">@stores.STORE_NAME</option>
+                                                    }
+                                                }
+                                            </select>
+                                            <span style="color:red;" id="divWebsite"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>User Type<span class="text-danger" style="color:red"> *</span></label>
+                                            <select class="form-control select2" style="width: 100%;" id="ddlUserType">
+                                                @if (ViewBag.LstRoles != null)
+                                                {
+                                                    <option value="0">--SELECT--</option>
+                                                    foreach (var roles in ViewBag.LstRoles)
+                                                    {
+                                                        <option value="@roles.ROLE_ID">@roles.ROLE_NAME</option>
+                                                    }
+                                                }
+                                            </select>
+                                            <span style="color:red;" id="divUserType"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>Superior User<span class="text-danger" style="color:red"> *</span></label>
+                                            <select class="form-control select2" style="width: 100%;" id="ddlSuperiorUser" disabled>
+                                                @if (ViewBag.LstSuperiorUsers != null)
+                                                {
+                                                    <option value="0">--SELECT--</option>
+                                                    foreach (var users in ViewBag.LstSuperiorUsers)
+                                                    {
+                                                        <option value="@users.USER_ID">@users.NAME</option>
+                                                    }
+                                                }
+                                            </select>
+                                            <span style="color:red;" id="divUserType"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>Username<span class="text-danger" style="color:red"> *</span></label>
+                                            <input type="text" class="form-control" id="_txtUsername" value=" ">
+                                            <span style="color:red;" id="divUsername"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group fontDesign">
+                                            <label>Password<span class="text-danger" style="color:red"> *</span></label>
+                                            <input type="text" class="form-control" id="_txtPassword" value="12345">
+                                            <span style="color:red;" id="divPassword"></span>
+                                        </div>
+                                    </div>
+                                   <div class="col-md-3">
+                                       <div class="form-group fontDesign">
+                                           <label>Confirm Password<span class="text-danger" style="color:red"> *</span></label>
+                                           <input type="text" class="form-control" id="txtConfirmPassword">
+                                       </div>
+                                   </div>
+                                </div>
+                                 <div class="row">
+                                     
+                                        <div class="col-md-3">
+                                            <div class="form-group fontDesign">
+                                                <label>Profile Photo<span class="text-danger" style="color:red"></span></label>
+                                                <input type="file" title="search image" id="fileUserImage" name="file" />
+                                                <input type="text" id="txtUserImage" style="display:none">
+                                            </div>
+
+                                            
+                                        </div>
+                                     <div class="col-md-3"></div>
+                                        <div class="col-md-6" style="text-align:right">
+                                            <br />
+                                            <button type="button" class="btn btn-success" id="btnSubmit"><i class="fa fa-save"></i> Submit</button>
+                                            &nbsp;  <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;"><i class="fa fa-pencil"></i> Update</button>
+                                            &nbsp;<button type="button" class="btn btn-warning" id="btnReset" onclick="fnReset()"><i class="fa fa-refresh"></i> Reset</button>
+
+                                        </div>
+                                    </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        @if (ViewBag.LstUsers != null)
+        { 
+        <div class="page-body">
+            <!-- Basic table card start -->
+            <div class="card">
+                <div class="card-block table-border-style">
+                    <div class="table-responsive">
+                        <table id="tblUser" class="table table-bordered table-hover">
+                            <thead>
+                                <tr style="background-color:#074434; color:white">
+                                    <td><b><label style="color:white">SL No.</label></b></td>
+                                    <td><b><label style="color:white">Name</label></b></td>
+                                    <td><b><label style="color:white">Email Id</label></b></td>
+                                    <td><b><label style="color:white">Role</label></b></td>
+                                    <td><b><label style="color:white">City</label></b></td>
+                                    <td><b><label style="color:white">Contact No</label></b></td>
+                                    <td><b><label style="color:white">Username</label></b></td>
+                                    <td><b><label style="color:white">Action</label></b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{ int Count = 0;}
+                                @foreach (var user in ViewBag.LstUsers)
+                                {
+                                    Count = Count + 1;
+                                    <tr id="tblRow_@user.USER_ID">
+                                        <td>@Count</td>
+                                        <td>@user.FIRST_NAME @user.LAST_NAME</td>
+                                        <td>@user.EMAIL_ID</td>
+                                        <td>@user.ROLE_NAME</td>
+                                        <td>@user.CITY</td>
+                                        <td>@user.CONTACT_NO</td>
+                                        <td>@user.USERNAME</td>
+                                        <td><span onclick="fnEdit('@user.USER_ID')" style="cursor:pointer" title="Edit"><i class="fa fa-pencil"></i></span>&nbsp;&nbsp;&nbsp;<span onclick="fnDelete('@user.USER_ID')" style="cursor:pointer" title="Delete"><i class="fa fa-trash"></i></span></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Basic table card end -->
+        </div>
+        }
+    </div>
+</div>
+<div id="loader" style="text-align:center; padding-top:20%;">
+    <span style="font-size:22px;color:#dce3de;">Please Wait Data Is Processing.....</span>
+</div>
+<div id="styleSelector">
+
+</div>
+
+
+<script type="text/javascript" src="~/Assets/js/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {       
+        const dataTable = new simpleDatatables.DataTable("#tblUser");
+        $("#txtDateOfBirth").datepicker({ dateFormat: 'dd-mm-yy' });
+        fnSubmitFormData();
+        fnUpdateFormData();
+        fnValidateNumbers();
+        fnReset();
+        fnSuperiorUserType();
+    });
+    
+    function fnReset() {
+        $("#hdnUserId").val('');
+        $("#txtFirstName").val('');
+        $("#txtLastName").val('');
+        $("#txtEmailId").val('');
+        $("#ddlGender").val('0');
+        $("#txtStreet").val('');
+        $("#txtLandmark").val('');
+        $("#txtCity").val('');
+        $("#txtDistrict").val('');
+        $("#txtPinCode").val('');
+        $("#ddlCountry").val('0');
+        $("#ddlState").val('0');
+        $("#txtDateOfBirth").val('');
+        $("#txtContactNo").val('');
+        $("#txtAlternateContactNo").val('');
+        $("#txtWebsite").val('');
+        $("#ddlUserType").val('0');
+        $("#ddlSuperiorUser").val('0');
+        $("#_txtUsername").val('');
+        $("#_txtPassword, #txtConfirmPassword").val('12345');
+        $('#btnSubmit').show();
+        $('#btnUpdate').hide();
+    }
+
+
+    function USER_MASTER_MODEL() {
+        var model =
+          {
+              "USER_ID": $("#hdnUserId").val(),
+              "USER_CODE": "",
+              "FIRST_NAME": $("#txtFirstName").val(),
+              "LAST_NAME": $("#txtLastName").val(),
+              "EMAIL_ID": $("#txtEmailId").val(),
+              "GENDER": $("#ddlGender").val(),
+              "STREET": $("#txtStreet").val(),
+              "LANDMARK": $("#txtLandmark").val(),
+              "CITY": $("#txtCity").val(),
+              "DISTRICT": $("#txtDistrict").val(),
+              "PINCODE": $("#txtPinCode").val(),
+              "COUNTRY_ID": $("#ddlCountry").val(),
+              "STATE_ID": $("#ddlState").val(),              
+              "DATE_OF_BIRTH": $("#txtDateOfBirth").val(),
+              "CONTACT_NO": $("#txtContactNo").val(),
+              "ALTERNATE_CONTACT_NO": $("#txtAlternateContactNo").val(),
+              "STORE_ID": $("#ddlStore").val(),
+              "PROFILE_PHOTO": null,
+              "ROLE_ID": $("#ddlUserType").val(),
+              "PARENT_USER_ID":$("#ddlSuperiorUser").val(),
+              "USERNAME": $("#_txtUsername").val(),
+              "PASSWORD": $("#_txtPassword").val()
+          }
+        return model;
+    }
+
+
+    function fnSubmitFormData() {
+        $('#btnSubmit').click(function () {
+            if (fnValidateInputs())
+            {
+                var spinner = $('#loader');
+                spinner.show();
+                var formData = new FormData();
+                var Save_Logo = {};
+                var File_Logo = $("#fileUserImage").get(0);
+                Save_Logo.files = File_Logo.files;
+                Save_Logo.filePath = File_Logo.value;
+                Save_Logo.allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+                for (var i = 0; i < Save_Logo.files.length; i++) {
+                    formData.append(Save_Logo.files[i].name, Save_Logo.files[i]);
+                }
+                var _USER_MASTER = USER_MASTER_MODEL();
+
+                formData.append('USER_ID', _USER_MASTER.USER_ID);
+                formData.append('USER_CODE', _USER_MASTER.USER_CODE);
+                formData.append('FIRST_NAME', _USER_MASTER.FIRST_NAME);
+                formData.append('LAST_NAME', _USER_MASTER.LAST_NAME);
+                formData.append('EMAIL_ID', _USER_MASTER.EMAIL_ID);
+                formData.append('GENDER', _USER_MASTER.GENDER);
+                formData.append('STREET', _USER_MASTER.STREET);
+                formData.append('LANDMARK', _USER_MASTER.LANDMARK);
+                formData.append('CITY', _USER_MASTER.CITY);
+                formData.append('DISTRICT', _USER_MASTER.DISTRICT);
+                formData.append('PINCODE', _USER_MASTER.PINCODE);
+                formData.append('STATE_ID', _USER_MASTER.STATE_ID);
+                formData.append('COUNTRY_ID', _USER_MASTER.COUNTRY_ID);
+                formData.append('DATE_OF_BIRTH', _USER_MASTER.DATE_OF_BIRTH);
+                formData.append('CONTACT_NO', _USER_MASTER.CONTACT_NO);
+                formData.append('ALTERNATE_CONTACT_NO', _USER_MASTER.ALTERNATE_CONTACT_NO);
+                formData.append('STORE_ID', _USER_MASTER.STORE_ID);
+                formData.append('ROLE_ID', _USER_MASTER.ROLE_ID);
+                formData.append('PARENT_USER_ID', _USER_MASTER.PARENT_USER_ID);
+                formData.append('USERNAME', _USER_MASTER.USERNAME);
+                formData.append('PASSWORD', _USER_MASTER.PASSWORD);
+
+                $.ajax({
+                    type: "POST",
+                    url: "/User/Create",
+                    contentType: false,
+                    processData: false,
+                    data: formData,
+                    success: function (result) {
+                        if (parseInt(result)>0) {
+                            alert("User successfully added.");
+                            window.location.reload();
+                        }
+                        else {
+                            alert("User not added.");
+                            spinner.hide();
+                            return false;
+                        }
+                    },
+                    error: function (response) {
+                        alert("User not added.");
+                        spinner.hide();
+                    }
+                });
+            }         
+        });
+    }
+
+    function fnEdit(USER_ID)
+    {
+        var spinner = $('#loader');
+        spinner.show();
+        $.ajax({
+        type: "POST",
+        url: "/User/Edit?USER_ID=" + USER_ID,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+            $("#hdnUserId").val(data.USER_ID);
+            $("#txtFirstName").val(data.FIRST_NAME);
+            $("#txtLastName").val(data.LAST_NAME);
+            $("#txtEmailId").val(data.EMAIL_ID);
+            $("#ddlGender").val(data.GENDER);
+            $("#txtStreet").val(data.STREET);
+            $("#txtLandmark").val(data.LANDMARK);
+            $("#txtCity").val(data.CITY);
+            $("#txtDistrict").val(data.DISTRICT);
+            $("#txtPinCode").val(data.PINCODE);
+            $("#ddlCountry").val(data.COUNTRY_ID);
+            $("#ddlState").val(data.STATE_ID);
+            $("#txtDateOfBirth").val(data.DATE_OF_BIRTH);
+            $("#txtContactNo").val(data.CONTACT_NO);
+            $("#txtAlternateContactNo").val(data.ALTERNATE_CONTACT_NO);
+            $("#ddlStore").val(data.STORE_ID);
+            $("#ddlUserType").val(data.ROLE_ID); 
+            $("#ddlSuperiorUser").val(data.PARENT_USER_ID);
+            $("#_txtUsername").val(data.USERNAME);
+            $("#_txtPassword, #txtConfirmPassword").val(data.PASSWORD);
+            data.ROLE_CODE == "CSHR" ? ($("#ddlSuperiorUser").prop('disabled', false)) : $("#ddlSuperiorUser").prop('disabled', true);
+            $('#btnSubmit').hide();
+            $('#btnUpdate').show();
+            var spinner = $('#loader');
+            spinner.hide();
+        },
+        error: function (response) {
+            alert("Some problem occured! Try again.");
+        }
+        });
+    }
+
+    function fnUpdateFormData() {
+        $('#btnUpdate').click(function () {
+            if (fnValidateInputs())
+            {
+                var spinner = $('#loader');
+                spinner.show();
+                var formData = new FormData();
+                var Save_Logo = {};
+                var File_Logo = $("#fileUserImage").get(0);
+                Save_Logo.files = File_Logo.files;
+                Save_Logo.filePath = File_Logo.value;
+                Save_Logo.allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+                for (var i = 0; i < Save_Logo.files.length; i++) {
+                    formData.append(Save_Logo.files[i].name, Save_Logo.files[i]);
+                }
+                var _USER_MASTER = USER_MASTER_MODEL();
+
+                formData.append('USER_ID', _USER_MASTER.USER_ID);
+                formData.append('USER_CODE', _USER_MASTER.USER_CODE);
+                formData.append('FIRST_NAME', _USER_MASTER.FIRST_NAME);
+                formData.append('LAST_NAME', _USER_MASTER.LAST_NAME);
+                formData.append('EMAIL_ID', _USER_MASTER.EMAIL_ID);
+                formData.append('GENDER', _USER_MASTER.GENDER);
+                formData.append('STREET', _USER_MASTER.STREET);
+                formData.append('LANDMARK', _USER_MASTER.LANDMARK);
+                formData.append('CITY', _USER_MASTER.CITY);
+                formData.append('DISTRICT', _USER_MASTER.DISTRICT);
+                formData.append('PINCODE', _USER_MASTER.PINCODE);
+                formData.append('STATE_ID', _USER_MASTER.STATE_ID);
+                formData.append('COUNTRY_ID', _USER_MASTER.COUNTRY_ID);
+                formData.append('DATE_OF_BIRTH', _USER_MASTER.DATE_OF_BIRTH);
+                formData.append('CONTACT_NO', _USER_MASTER.CONTACT_NO);
+                formData.append('ALTERNATE_CONTACT_NO', _USER_MASTER.ALTERNATE_CONTACT_NO);
+                formData.append('STORE_ID', _USER_MASTER.STORE_ID); 
+                formData.append('ROLE_ID', _USER_MASTER.ROLE_ID);
+                formData.append('PARENT_USER_ID', _USER_MASTER.PARENT_USER_ID);
+                formData.append('USERNAME', _USER_MASTER.USERNAME);
+                formData.append('PASSWORD', _USER_MASTER.PASSWORD);
+
+                $.ajax({
+                    type: "POST",
+                    url: "/User/Update",
+                    contentType: false,
+                    processData: false,
+                    data: formData,
+                    success: function (result) {
+                        if (parseInt(result)>0) {
+                            alert("User successfully updated.");
+                            window.location.reload();
+                        }
+                        else {
+                            alert("User not updated.");
+                            spinner.hide();
+                            return false;
+                        }
+                    },
+                    error: function (response) {
+                        alert("User not updated.");
+                        spinner.hide();
+                    }
+                });
+            }
+        });
+    }
+
+    function fnValidateInputs() {
+        var IsValid = true;
+        if ($('#txtFirstName').val().trim() == "") {
+            alert("First name is required.");
+            $('#txtFirstName').focus();
+            IsValid = false;
+        }
+        else if ($('#txtLastName').val().trim() == "") {
+            alert("Last name is required.");
+            $('#txtLastName').focus();
+            IsValid = false;
+        }
+        else if ($('#txtEmailId').val().trim() == "") {
+            alert("EmailId is required.");
+            $('#txtEmailId').focus();
+            IsValid = false;
+        }
+        else if ($('#ddlGender').val() < 1) {
+            alert("Gender is required.");
+            $('#ddlGender').focus();
+            IsValid = false;
+        }
+        else if ($('#txtCity').val() == "") {
+            alert("City is required.");
+            $('#txtCity').focus();
+            IsValid = false;
+        }
+        else if ($('#txtPinCode').val().trim() == "") {
+            alert("Pin code is required.");
+            $('#txtPinCode').focus();
+            IsValid = false;
+        }
+        else if ($('#ddlCountry').val().trim() < 1) {
+            alert("Country is required.");
+            $('#ddlCountry').focus();
+            IsValid = false;
+        }
+        else if ($('#ddlState').val().trim() < 1) {
+            alert("State is required.");
+            $('#ddlState').focus();
+            IsValid = false;
+        }
+        else if ($('#txtDateOfBirth').val().trim() == "") {
+            alert("Date of birth is required.");
+            $('#txtDateOfBirth').focus();
+            IsValid = false;
+        }
+        else if ($('#txtContactNo').val().trim() == "") {
+            alert("ContactNo is required.");
+            $('#txtContactNo').focus();
+            IsValid = false;
+        }
+        else if ($('#ddlUserType').val().trim() < 1) {
+            alert("User type is required.");
+            $('#ddlUserType').focus();
+            IsValid = false;
+        }
+        else if ($('#_txtUsername').val().trim() == "") {
+            alert("User name is required.");
+            $('#_txtUsername').focus();
+            IsValid = false;
+        }
+        return IsValid;
+    }
+
+    function fnValidateNumbers() {
+        $('#txtPinCode, #txtContactNo, #txtAlternateContactNo').keypress(function (e) {
+            var charCode = (e.which) ? e.which : event.keyCode
+            if (String.fromCharCode(charCode).match(/[^0-9]/g))
+                return false;
+        });
+    }
+
+    function fnDelete(USER_ID) {
+        var result = confirm('Are you sure want to delete?');
+        if (result == true) {
+            var _USER_MASTER = USER_MASTER_MODEL();
+            _USER_MASTER.USER_ID = USER_ID;
+            $.ajax({
+                type: "POST",
+                url: "/User/Delete?USER_ID=" + USER_ID,
+                contentType: "application/json; charset=utf-8",
+                data:JSON.stringify(_USER_MASTER),
+                dataType: "json",
+                success: function (result) {
+                    if (parseInt(result) > 0)
+                    {
+                        alert("Data successfully deleted.");
+                        window.location.reload();
+                    }
+                },
+                error: function (response) {
+                    alert("Some problem occured! Try again.");
+                }
+            });
+        }
+    }
+
+    function fnSuperiorUserType()
+    {
+        $('#ddlUserType').change(function () {
+            var SuperiorUserType = $("#ddlSuperiorUser option:selected").text();
+            var UserType = $("#ddlUserType option:selected").text();
+            if (UserType == 'CASHIER')
+                $("#ddlSuperiorUser").prop('disabled', false);
+            else
+                $("#ddlSuperiorUser").prop('disabled', true);
+        });
+    }
+
+</script>
+

@@ -1,0 +1,284 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Fargo_Models.StoreTrackingModel
+<style>
+    .fontDesign {
+        color: #666666;
+        font-weight: bold;
+        font-size: 13px;
+    }
+</style>
+@if (ViewBag.Message != null)
+{
+    <script>alert('@ViewBag.Message');</script>
+}
+
+<style type="text/css">
+    #loader {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: white;
+        z-index: 10000;
+    }
+</style>
+<div class="main-body">
+    <div class="page-wrapper">
+
+
+        <div class="page-body" style="display:none">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-block primary-breadcrumb" style="height:12px">
+                            <div class="breadcrumb-header">
+                                <h6>Slot Management</h6>
+                            </div>
+                        </div>
+                        <div class="card-block">
+
+                            @using (Html.BeginForm("Tracking", "Store", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmStore" }))
+                            {
+                               <input type="hidden" id="hdnStoreTrackingId"/>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="pcoded-mtext fontDesign">Store Name</span>
+                                            <select class="form-control select2" style="width: 100%;" id="ddlStore">
+                                                @if (ViewBag.LST_STORES != null)
+                                                {
+                                                    <option value="0">--SELECT--</option>
+                                                    foreach (var _LST_STORES in ViewBag.LST_STORES)
+                                                    {
+                                                        <option value="@_LST_STORES.STORE_ID">@_LST_STORES.STORE_NAME</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="pcoded-mtext fontDesign">From Tracking No</span>
+                                            <input type="text" class="form-control" id="txtFromTrackingNo">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="pcoded-mtext fontDesign">To Tracking No</span>
+                                            <input type="text" class="form-control" id="txtToTrackingNo">
+                                         </div>
+                                    </div>
+                                    <div class="col-md-3" style="display:none">
+                                        <div class="form-group">
+                                            <span class="pcoded-mtext fontDesign">Current Tracking No</span>
+                                            <input type="text" class="form-control" id="txtCurrentTrackingNo" disabled>
+                                          </div>
+                                    </div>
+                                </div>
+                                    <div class="row">
+                                        <div class="col-md-12" align="center">
+                                            <button type="button" class="btn btn-primary" id="btnSubmit"><i class="fa fa-save"></i> Submit</button>
+                                            &nbsp;  <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;"><i class="fa fa-pencil"></i> Update</button>
+                                            &nbsp;<button type="button" class="btn btn-warning" id="btnReset" onclick="fnReset()"><i class="fa fa-refresh"></i> Reset</button>
+                                        </div>
+                                    </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page-body start -->
+        <div class="page-body">
+            <!-- Basic table card start -->
+            <div class="card">
+                <div class="card-block primary-breadcrumb" style="height:12px; background-color:#074434">
+                    <div class="breadcrumb-header" style="color:white">
+                        <h6>Slot Management</h6>
+                    </div>
+                </div>
+                <div class="card-block table-border-style">
+                    <div class="table-responsive">
+                        @if (ViewBag.LstStores != null)
+                        {
+                            <table id="tblStoreTracking" class="table table-bordered table-hover">
+                                <thead style="background-color:#013e3d; color:white">
+                                    <tr style="background-color:#013e3d; color:wheat">
+                                        <td><b><label style="color:white">SL No.</label></b></td>
+                                        <td><b><label style="color:white">Store Name</label></b></td>
+                                        <td><b><label style="color:white">Store Code</label></b></td>
+                                        <td><b><label style="color:white">Starting Tracking No</label></b></td>
+                                        <td><b><label style="color:white">End Tracking No</label></b></td>
+                                        <td><b><label style="color:white">Current No</label></b></td>
+                                        <td><b><label style="color:white">Description</label></b></td>
+                                        <td><b><label style="color:white">Action</label></b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{ int Count = 0;}
+                                    @foreach (var store in ViewBag.LstStores)
+                                    {
+                                        Count = Count + 1;
+                                        <tr id="tblRow_@store.STORE_ID">
+                                            <td>@Count</td>
+                                            <td>
+                                                <input type="text" class="form-control" readonly id="txtStoreName_@store.STORE_ID" value="@store.STORE_NAME">
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" readonly id="txtStoreCode_@store.STORE_ID" value="@store.STORE_CODE">
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control ValidateNumbers" disabled id="txtFromTrackingNo_@store.STORE_ID" value="@store.FROM_TRACKING_NO">
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control ValidateNumbers" disabled id="txtToTrackingNo_@store.STORE_ID" value="@store.TO_TRACKING_NO">
+                                            </td>
+
+
+                                            <td>
+                                                <input type="text" class="form-control" readonly id="txtCurrentTrackingNo_@store.STORE_ID" value="0">
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" readonly id="txtDescription_@store.DESCRIPTION" value="@store.DESCRIPTION">
+                                            </td>
+                                            <td>
+                                                <span onclick="fnEnableTrackingControl('@store.STORE_ID')" style="cursor:pointer" title="Edit" id="spnEdit_@store.STORE_ID" class="Edit"><i class="ti-pencil-alt"></i></span>
+                                                <span onclick="fnUpdateStoreTracking('@store.STORE_ID')" style="cursor:pointer; display:none" title="Save" id="spnSave_@store.STORE_ID" class="Save"><i class="ti-check-box"></i></span>
+                                                &nbsp;&nbsp;
+                                                @*<span onclick="fnDeleteStoreTracking('@_LST_STORES.STORE_ID')" style="cursor:pointer" title="Delete" id="spnDelete_@_LST_STORES.STORE_TRACKING_ID" class="Delete"><i class="ti-trash"></i></span>*@
+                                                <span onclick="fnResetTrackingControl('@store.STORE_ID', '@store.MODIFIED_BY')" style="cursor:pointer; display:none" title="Reset" id="spnReset_@store.STORE_ID" class="Reset"><i class="ti-close"></i></span>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Basic table card end -->
+        </div>
+        <!-- Page-body end -->
+    </div>
+</div>
+<div id="loader" style="text-align:center; padding-top:20%;">
+    <span style="font-size:22px;color:#dce3de;">Please wait...</span>
+</div>
+<div id="styleSelector">
+
+</div>
+<script type="text/javascript" src="~/Assets/js/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+       
+        const dataTable = new simpleDatatables.DataTable("#tblStoreTracking");      
+        fnValidateNumbers();
+    });
+
+    function fnResetTrackingControl(STORE_ID, MODIFIED_BY)
+    {
+        $(".ValidateNumbers").prop('disabled', true);
+        $(".Save, .Reset").hide(); $(".Edit, .Delete").show();
+        
+        if (MODIFIED_BY < 1)
+        {
+            $("#txtFromTrackingNo_" + STORE_ID + " , " + "#txtToTrackingNo_" + STORE_ID).val('0');
+        }        
+    }
+
+    function fnEnableTrackingControl(STORE_ID)
+    {
+        $(".ValidateNumbers").prop('disabled', true);    
+
+        $("#txtFromTrackingNo_" + STORE_ID + " , " + "#txtToTrackingNo_" + STORE_ID).prop('disabled', false);
+        $("#txtFromTrackingNo_" + STORE_ID).focus();
+
+        $(".Save, .Reset").hide(); $(".Edit, .Delete").show();
+        $("#spnSave_" + STORE_ID + ", #spnReset_" + STORE_ID).show();
+        $("#spnEdit_" + STORE_ID + ", #spnDelete_" + STORE_ID).hide();
+    }
+
+    function fnStoreTrackingModel(STORE_ID)
+    {
+        var model =
+         {
+            
+             "STORE_ID": STORE_ID,
+             "FROM_TRACKING_NO": $("#txtFromTrackingNo_" + STORE_ID).val(),
+             "TO_TRACKING_NO": $("#txtToTrackingNo_" + STORE_ID).val(),
+             "CURRENT_TRACKING_NO": $("#txtCurrentTrackingNo_" + STORE_ID).val()
+         }
+        return model;
+    }
+
+
+    function fnUpdateStoreTracking(STORE_ID) {
+        if (fnValidateInputs()) {
+            var StoreTrackingModel = fnStoreTrackingModel(STORE_ID);
+            var spinner = $('#loader');
+            spinner.show();
+            $.ajax({
+                type: "POST",
+                url: "/Store/EditStoreTrackingNo",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(StoreTrackingModel),
+                dataType: "json",
+                success: function (response) {
+                    spinner.hide();
+                    fnResetTrackingControl(STORE_ID);
+                    alert(response);
+                },
+                error: function (response) {
+                    alert("Some problem occured! Try again.");
+                }
+            });
+
+        }
+    }
+
+   
+
+    function fnValidateInputs(STORE_ID)
+    {
+        var IsValid = true;
+        var FromTrackingNo = $('#txtFromTrackingNo_' + STORE_ID).val();
+        var ToTrackingNo = $('#txtToTrackingNo_' + STORE_ID).val();
+
+        if (FromTrackingNo< 1) {
+            alert("Starting tracking number is required.");
+            $('#txtFromTrackingNo_' + STORE_ID).focus();
+            return false;
+        }
+        else if (ToTrackingNo < 1) {
+            alert("End tracking number is required.");
+            $('#txtToTrackingNo_' + STORE_ID).focus();
+            return false;
+        }
+        return IsValid;
+    }    
+
+   
+
+    function fnValidateNumbers() {
+        $('.ValidateNumbers').keypress(function (e) {
+            var charCode = (e.which) ? e.which : event.keyCode
+            if (String.fromCharCode(charCode).match(/[^0-9]/g))
+                return false;
+        });
+    }
+</script>
+
+
+

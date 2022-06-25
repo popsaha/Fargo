@@ -1,0 +1,24 @@
+-----------Exception Details on  20-06-2022 07:30:57 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 20-06-2022 07:30:57 AM
+
+Error Line No : ine 117
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid object name 'CTE'.
+
+ Error Page Url: http://localhost:6492/api/VoidTrackingTransactionAPI/ReportVoidTransactionRequest?USER_ID=2&PAGE_NUMBER=1
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

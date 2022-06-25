@@ -1,0 +1,384 @@
+-----------Exception Details on  09-06-2022 04:10:26 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 04:10:26 PM
+
+Error Line No : line 59
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spRoleModuleMapping'.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 04:10:31 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 04:10:31 PM
+
+Error Line No : line 60
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spReport'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 04:10:32 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 04:10:32 PM
+
+Error Line No : line 95
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spReport'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 11:32:07 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 11:32:07 PM
+
+Error Line No : line 59
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spRoleModuleMapping'.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 11:32:12 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 11:32:12 PM
+
+Error Line No : line 60
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spReport'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 11:32:13 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 11:32:13 PM
+
+Error Line No : line 95
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spReport'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 11:37:27 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 11:37:27 PM
+
+Error Line No : line 59
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spRoleModuleMapping'.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 11:37:28 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 11:37:28 PM
+
+Error Line No : line 59
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spRoleModuleMapping'.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 11:37:32 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 11:37:32 PM
+
+Error Line No : line 60
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spReport'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 11:37:34 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 11:37:34 PM
+
+Error Line No : line 95
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spReport'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 11:47:50 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 11:47:50 PM
+
+Error Line No : line 59
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spRoleModuleMapping'.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 11:47:54 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 11:47:54 PM
+
+Error Line No : line 60
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spReport'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 11:47:56 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 11:47:56 PM
+
+Error Line No : line 95
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spReport'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 11:48:24 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 11:48:24 PM
+
+Error Line No : line 59
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spRoleModuleMapping'.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 11:48:29 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 11:48:29 PM
+
+Error Line No : line 60
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spReport'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  09-06-2022 11:48:30 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 09-06-2022 11:48:30 PM
+
+Error Line No : line 95
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spReport'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

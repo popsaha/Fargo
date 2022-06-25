@@ -1,0 +1,96 @@
+-----------Exception Details on  23-06-2022 10:02:07 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 23-06-2022 10:02:07 PM
+
+Error Line No : line 40
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  23-06-2022 10:03:43 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 23-06-2022 10:03:43 PM
+
+Error Line No : line 40
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  23-06-2022 10:06:01 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 23-06-2022 10:06:01 PM
+
+Error Line No : ine 162
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+
+ Error Page Url: http://localhost:6492/Report/Transaction
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  23-06-2022 10:06:32 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 23-06-2022 10:06:32 PM
+
+Error Line No : ine 162
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Connection Timeout Expired.  The timeout period elapsed while attempting to consume the pre-login handshake acknowledgement.  This could be because the pre-login handshake failed or the server was unable to respond back in time.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=4893; handshake=14436; 
+
+ Error Page Url: http://localhost:6492/Report/Transaction
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

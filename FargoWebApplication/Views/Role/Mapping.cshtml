@@ -1,0 +1,266 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Fargo_DataAccessLayers.ROLE_MASTER
+@using Fargo_Models;
+@{
+   List<RoleModuleMappingModel> LstMenu= null;
+   if (ViewBag.LstMenu != null)
+   {
+       LstMenu = ViewBag.LstMenu;
+   }
+}
+
+<style type="text/css">
+    #loader {
+        background-color: transparent;
+        background: transparent;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../../Images/480px-Loader.gif');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: white;
+        z-index: 10000;
+    }
+</style>
+
+
+<style>
+    .fontDesign {
+        color: #666666;
+        font-weight: bold;
+        font-size: 13px;
+    }
+</style>
+@if (ViewBag.Message != null)
+{
+    <script>alert('@ViewBag.Message');</script>
+}
+
+<div class="main-body">
+    <div class="page-wrapper">
+
+
+        <div class="page-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-block primary-breadcrumb" style="height:12px; background-color:#074434">
+                            <div class="breadcrumb-header">
+                                <h6><label style="color:white">Role Module Mappings</label></h6>
+                            </div>
+                        </div>
+                        <div class="card-block">
+
+                            @using (Html.BeginForm("Index", "Role", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmRole" }))
+                            {
+                                @Html.HiddenFor(x => x.ROLE_ID, new { @id = "hdnRoleId" });
+                                <input type="hidden" id="hdnRoleId" />
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="pcoded-mtext fontDesign">Role Name</span>
+                                            <select class="form-control select2" style="width: 100%;" id="ddlRole">
+                                                @if (ViewBag.LST_ROLES != null)
+                                                {
+                                                    <option value="0">--SELECT--</option>
+                                                    foreach (var roles in ViewBag.LST_ROLES)
+                                                    {
+                                                        <option value="@roles.ROLE_ID">@roles.ROLE_NAME</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page-body start -->
+        <div class="page-body">
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-text">Select all&nbsp;&nbsp;&nbsp;<input type="checkbox" id="chkSelectAll" /></div>
+                    </div>
+                    <div class="card-block accordion-block color-accordion-block">
+                        <div class="color-accordion" id="color-accordion">
+                            @{
+                                List<long> LstModuleId = LstMenu.Select(x => x.MODULE_ID).Distinct().ToList();
+                                foreach (long ModuleId in LstModuleId)
+                                {
+                                    string Module_Id = ModuleId.ToString();
+                                    string ModuleName = LstMenu.ToList().Where(x => x.MODULE_ID == ModuleId).Select(x => x.MODULE_NAME).FirstOrDefault();
+                                    <a class="accordion-msg b-none" style="background-color:#074434; color:white">@ModuleName</a>
+                                    List<long> LstMenuId = LstMenu.Where(x => x.MODULE_ID == ModuleId).Select(x => x.MENU_ID).Distinct().ToList();
+                                    foreach (long MenuId in LstMenuId)
+                                    {
+                                       
+                                        string MenuName = LstMenu.ToList().Where(x => x.MODULE_ID == ModuleId && x.MENU_ID == MenuId).Select(x => x.MENU_NAME).FirstOrDefault();
+                                        List<RoleModuleMappingModel> LstSubMenu = LstMenu.Where(x => x.MODULE_ID == ModuleId && x.MENU_ID == MenuId).Distinct().ToList();
+                                   
+                                        <div class="accordion-desc">
+
+                                            <p><label style="font-size:15px; font-weight:bold">@MenuName</label></p>
+
+                                            <div class="row">
+                                                @foreach (RoleModuleMappingModel roleModuleMapping in LstSubMenu)
+                                                {
+                                                    string SubMenuName = roleModuleMapping.SUBMENU_NAME;
+                                                    string ControlId = roleModuleMapping.CONTROL_ID;
+                                                    <div class="col-lg-3">
+                                                        @SubMenuName <input type="checkbox" id="@ControlId" value="@ControlId" class="clsSubMenu"/>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                }
+}                         
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12" align="center">
+                                <input type="button" class="btn btn-success" id="btnSubmit" value="Submit" name="Submit">
+                                &nbsp;
+                                <input type="button" class="btn btn-primary" id="btnReset" value="Reset" name="Reset" onclick="Reset()">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- Color Open Accordion ends -->
+
+           
+        </div>
+        <!-- Row end -->
+    </div>
+
+</div>
+        <!-- Page-body end -->
+
+ <div id="loader" style="text-align:center; padding-top:20%;">
+    <span style="font-size:22px;color:#dce3de;">Please Wait Data Is Processing.....</span>
+</div>
+<div id="styleSelector">
+
+</div>
+<script type="text/javascript" src="~/Assets/js/jquery/jquery.min.js"></script>
+@*<script src="~/Assets/pages/accordion/accordion.min.js"></script>*@
+<script>
+    $(document).ready(function () {
+        Submit();
+        Reset();
+        fnCheckAll();
+        fnBindSubmittedData();
+    });
+
+    function Reset()
+    { 
+        $("input[type=checkbox]").each(function () {
+            $(this).prop('checked', false);
+        });
+        $("#ddlRole").val('0');
+    }
+
+    function fnCheckAll()
+    {
+        $("#chkSelectAll").click(function () {
+            $("input[type=checkbox]").prop('checked', $(this).prop('checked'));
+        });
+    }
+
+    function fnBindSubmittedData()
+    {
+        $('#ddlRole').change(function () {
+            var ROLE_ID = $('#ddlRole').val();
+            if (parseInt(ROLE_ID) > 0) {
+                $('#loader').show();
+                $(".clsSubMenu:checkbox").each(function () {
+                    $(this).prop('checked', false);
+                });
+                $.ajax({
+                    type: "post",
+                    url: "/Role/LstRoleMenu?ROLE_ID=" + ROLE_ID,
+                    data: ROLE_ID,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        $.each(data, function (index, item) {
+                            $('#' + item.CONTROL_ID).prop('checked', true);
+                        })
+                        $('#loader').hide();
+                    },
+                    error: function () {
+                        alert("Error while inserting data.");
+                    }
+                });
+            }
+            else {
+                $(".clsSubMenu:checkbox").each(function () {
+                    $(this).prop('checked', false);
+                });
+            }
+        })
+    }
+
+    function Submit()
+    {
+        $('#btnSubmit').click(function () {
+            if ($("#ddlRole").val() < 1)
+            {
+                alert('Role name is required.');
+                $("#ddlRole").focus();
+                return false;
+            }
+            $('#loader').show();
+            var RoleModuleMapping = {};
+            var arrSubMenu = new Array();
+            $(".clsSubMenu:checkbox:checked").each(function () {
+                arrSubMenu.push({
+                    CONTROL_ID: this.value,
+                    ROLE_ID: $("#ddlRole").val()
+                });
+            });
+            if (arrSubMenu.length > 0) {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("SubmitRoleModuleMapping", "Role")',
+                    data: JSON.stringify(arrSubMenu),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (result) {
+                        if (result > 0)
+                        {                            
+                            $('#loader').hide();
+                            alert('Records has been submitted.');
+                            $("#ddlRole").focus();
+                        }
+                    },
+                    error: function () {
+                        alert("Error while inserting data."); $('#loader').hide();
+                    }
+                });
+            }
+            else { alert("Please select submenu to proceed."); $('#loader').hide(); }
+
+        });
+    }
+</script>
+
+
+

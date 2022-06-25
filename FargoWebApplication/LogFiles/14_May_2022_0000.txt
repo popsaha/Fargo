@@ -1,0 +1,168 @@
+-----------Exception Details on  14-05-2022 09:09:12 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 14-05-2022 09:09:12 AM
+
+Error Line No : line 39
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  14-05-2022 02:01:57 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 14-05-2022 02:01:57 PM
+
+Error Line No : line 39
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  14-05-2022 02:05:55 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 14-05-2022 02:05:55 PM
+
+Error Line No : line 39
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  14-05-2022 02:16:00 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 14-05-2022 02:16:00 PM
+
+Error Line No : ine 150
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : Failure sending mail.
+
+ Error Page Url: http://localhost:6492/api/LoginAPI/ForgotPassword
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  14-05-2022 07:03:33 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 14-05-2022 07:03:33 PM
+
+Error Line No : ine 113
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. Learn more at
+
+ Error Page Url: http://localhost:6492/api/LoginAPI/ForgotPassword
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  14-05-2022 07:31:35 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 14-05-2022 07:31:35 PM
+
+Error Line No : ine 113
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. Learn more at
+
+ Error Page Url: http://localhost:6492/api/LoginAPI/ForgotPassword
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  14-05-2022 07:55:35 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 14-05-2022 07:55:35 PM
+
+Error Line No : ine 152
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. Learn more at
+
+ Error Page Url: http://localhost:6492/api/LoginAPI/ForgotPassword
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

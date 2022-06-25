@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0babbcf30f514643be19c7fe79c3a0f7" Name="Diagram1" ZoomLevel="80">
+        <EntityTypeShape EntityType="DbFargoApplicationModel.BOOKING_ORDER_DETAILS" PointX="0.75" PointY="0.75" Width="1.5" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.COUNTRY_MASTER" Width="1.5" PointX="4.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.CREDIT_CUSTOMER" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.DENOMINATION_MASTER" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.ROLE_MASTER" Width="1.5" PointX="8.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.ROLE_MODULE_MAPPING" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.STATE_MASTER" Width="1.5" PointX="10.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.STORE_TRACKING_MASTER" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.USERTYPE_MASTER" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.BOOKING_DAY_END_TRANSACTION_DETAILS" Width="1.5" PointX="13.375" PointY="11.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.MENU_MASTER" Width="1.5" PointX="7.375" PointY="14.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.MODULE_MASTER" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.SUBMENU_MASTER" Width="1.5" PointX="15.375" PointY="5.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.BOOKING_DAY_END_TRANSACTION" Width="1.5" PointX="9.375" PointY="15.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.BOOKING_PAYMENT_DETAILS" Width="1.5" PointX="15.375" PointY="11.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.CANCELLATION_REASON" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.VOID_TRACKING_TRANSACTION" Width="1.5" PointX="11.75" PointY="16.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.BOOKING_TRANSACTION_MASTER" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.USER_MASTER" Width="1.5" PointX="3.375" PointY="10.75" />
+        <EntityTypeShape EntityType="DbFargoApplicationModel.STORE_MASTER" Width="1.5" PointX="3.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

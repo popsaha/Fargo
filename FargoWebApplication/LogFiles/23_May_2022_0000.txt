@@ -1,0 +1,192 @@
+-----------Exception Details on  23-05-2022 07:47:54 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 23-05-2022 07:47:54 AM
+
+Error Line No : line 93
+
+Error Message: FormatException
+
+Exception Type: System.FormatException
+
+Error Location : String was not recognized as a valid DateTime.
+
+ Error Page Url: http://localhost:6492/User/Create
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  23-05-2022 07:50:33 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 23-05-2022 07:50:33 AM
+
+Error Line No : line 93
+
+Error Message: FormatException
+
+Exception Type: System.FormatException
+
+Error Location : String was not recognized as a valid DateTime.
+
+ Error Page Url: http://localhost:6492/User/Create
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  23-05-2022 08:23:16 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 23-05-2022 08:23:16 AM
+
+Error Line No : line 96
+
+Error Message: NullReferenceException
+
+Exception Type: System.NullReferenceException
+
+Error Location : Object reference not set to an instance of an object.
+
+ Error Page Url: http://localhost:6492/User/Create
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  23-05-2022 08:28:12 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 23-05-2022 08:28:12 AM
+
+Error Line No : line 96
+
+Error Message: NullReferenceException
+
+Exception Type: System.NullReferenceException
+
+Error Location : Object reference not set to an instance of an object.
+
+ Error Page Url: http://localhost:6492/User/Create
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  23-05-2022 08:30:13 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 23-05-2022 08:30:13 AM
+
+Error Line No : ine 140
+
+Error Message: DirectoryNotFoundException
+
+Exception Type: System.IO.DirectoryNotFoundException
+
+Error Location : Could not find a part of the path 'G:\TBB\Fargo Application\Fargo application with new layout integration\Fargo web application\FargoWebApplication\FargoWebApplication\UploadImages\UserImages\230520223013.jpg'.
+
+ Error Page Url: http://localhost:6492/User/Create
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  23-05-2022 08:34:42 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 23-05-2022 08:34:42 AM
+
+Error Line No : ine 140
+
+Error Message: DirectoryNotFoundException
+
+Exception Type: System.IO.DirectoryNotFoundException
+
+Error Location : Could not find a part of the path 'G:\TBB\Fargo Application\Fargo application with new layout integration\Fargo web application\FargoWebApplication\FargoWebApplication\UploadImages\UserImages\230520223430.png'.
+
+ Error Page Url: http://localhost:6492/User/Create
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  23-05-2022 01:53:00 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 23-05-2022 01:53:00 PM
+
+Error Line No : line 39
+
+Error Message: EntityCommandExecutionException
+
+Exception Type: System.Data.Entity.Core.EntityCommandExecutionException
+
+Error Location : An error occurred while executing the command definition. See the inner exception for details.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  23-05-2022 05:18:12 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 23-05-2022 05:18:12 PM
+
+Error Line No : line 39
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

@@ -1,0 +1,24 @@
+-----------Exception Details on  12-04-2022 06:32:54 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 12-04-2022 06:32:54 AM
+
+Error Line No : line 36
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'Fargo_DataAccessLayers.USER_MASTER' to type 'Fargo_DataAccessLayers.STORE_MASTER'.
+
+ Error Page Url: http://localhost:6492/Store/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

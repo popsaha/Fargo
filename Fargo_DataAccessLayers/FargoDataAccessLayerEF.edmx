@@ -1,0 +1,1389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DbFargoApplicationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BOOKING_DAY_END_TRANSACTION">
+          <Key>
+            <PropertyRef Name="BOOKING_DAY_END_TRANSACTION_ID" />
+          </Key>
+          <Property Name="BOOKING_DAY_END_TRANSACTION_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STORE_ID" Type="bigint" />
+          <Property Name="CASHIER_ID" Type="bigint" />
+          <Property Name="IS_CASHIER_APPROVED" Type="bit" />
+          <Property Name="CASHIER_REMARK" Type="varchar" MaxLength="1000" />
+          <Property Name="TOTAL_AMOUNT" Type="float" />
+          <Property Name="MANAGER_ID" Type="bigint" />
+          <Property Name="IS_MANAGER_APPROVED" Type="bit" />
+          <Property Name="MANAGER_REMARK" Type="varchar" MaxLength="1000" />
+          <Property Name="STATUS" Type="varchar" MaxLength="50" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BOOKING_DAY_END_TRANSACTION_DETAILS">
+          <Key>
+            <PropertyRef Name="BOOKING_DAY_END_TRANSACTION_DETAILS_ID" />
+          </Key>
+          <Property Name="BOOKING_DAY_END_TRANSACTION_DETAILS_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BOOKING_DAY_END_TRANSACTION_ID" Type="bigint" />
+          <Property Name="DENOMINATION_ID" Type="bigint" />
+          <Property Name="QUANTITY" Type="float" />
+          <Property Name="AMOUNT" Type="float" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="1000" />
+          <Property Name="STATUS" Type="varchar" MaxLength="50" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BOOKING_ORDER_DETAILS">
+          <Key>
+            <PropertyRef Name="BOOKING_ORDER_DETAILS_ID" />
+          </Key>
+          <Property Name="BOOKING_ORDER_DETAILS_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BOOKING_TRANSACTION_ID" Type="bigint" />
+          <Property Name="ORDER_NUMBER" Type="varchar" MaxLength="100" />
+          <Property Name="TRACKING_NUMBER" Type="varchar" MaxLength="100" />
+          <Property Name="STATUS" Type="varchar" MaxLength="100" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="1000" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BOOKING_PAYMENT_DETAILS">
+          <Key>
+            <PropertyRef Name="BOOKING_PAYMENT_DETAILS_ID" />
+          </Key>
+          <Property Name="BOOKING_PAYMENT_DETAILS_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BOOKING_TRANSACTION_ID" Type="bigint" />
+          <Property Name="REFERENCE_NUMBER" Type="varchar" MaxLength="100" />
+          <Property Name="PAYMENT_MODE" Type="varchar" MaxLength="100" />
+          <Property Name="AMOUNT" Type="float" />
+          <Property Name="STATUS" Type="varchar" MaxLength="1000" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="1000" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BOOKING_TRANSACTION_MASTER">
+          <Key>
+            <PropertyRef Name="BOOKING_TRANSACTION_ID" />
+          </Key>
+          <Property Name="BOOKING_TRANSACTION_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USER_ID" Type="bigint" />
+          <Property Name="CASHIER_ID" Type="bigint" />
+          <Property Name="STORE_ID" Type="bigint" />
+          <Property Name="IMEI_NUMBER" Type="varchar" MaxLength="100" />
+          <Property Name="CUSTOMER_ID" Type="bigint" />
+          <Property Name="CUSTOMER_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="CUSTOMER_CONTACT" Type="varchar" MaxLength="100" />
+          <Property Name="COURIER_ADDRESS" Type="varchar" MaxLength="1000" />
+          <Property Name="TOTAL_AMOUNT" Type="float" />
+          <Property Name="DATE" Type="varchar" MaxLength="100" />
+          <Property Name="TIME" Type="varchar" MaxLength="100" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CANCELLATION_REASON">
+          <Key>
+            <PropertyRef Name="CANCELLATION_ID" />
+          </Key>
+          <Property Name="CANCELLATION_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="REASON" Type="varchar" MaxLength="200" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="1000" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="COUNTRY_MASTER">
+          <Key>
+            <PropertyRef Name="COUNTRY_ID" />
+          </Key>
+          <Property Name="COUNTRY_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COUNTRY_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="COUNTRY_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="1000" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CREDIT_CUSTOMER">
+          <Key>
+            <PropertyRef Name="CUSTOMER_ID" />
+          </Key>
+          <Property Name="CUSTOMER_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CUSTOMER_CODE" Type="varchar" MaxLength="30" />
+          <Property Name="CUSTOMER_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="COUNTRY_ID" Type="bigint" />
+          <Property Name="STATE_ID" Type="bigint" />
+          <Property Name="CITY" Type="varchar" MaxLength="100" />
+          <Property Name="ADDRESS" Type="varchar" MaxLength="1000" />
+          <Property Name="PIN_CODE" Type="varchar" MaxLength="10" />
+          <Property Name="COMPANY" Type="varchar" MaxLength="500" />
+          <Property Name="PHONE_NO" Type="varchar" MaxLength="20" />
+          <Property Name="EMAIL_ID" Type="varchar" MaxLength="50" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" />
+          <Property Name="CUSTOMER_COMMISSION" Type="varchar" MaxLength="10" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DENOMINATION_MASTER">
+          <Key>
+            <PropertyRef Name="DENOMINATION_ID" />
+          </Key>
+          <Property Name="DENOMINATION_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VALUE" Type="varchar" MaxLength="50" />
+          <Property Name="SYMBOL" Type="varchar" MaxLength="30" />
+          <Property Name="INITIALS" Type="varchar" MaxLength="10" />
+          <Property Name="NAME" Type="varchar" MaxLength="100" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="1000" />
+          <Property Name="COUNTRY_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="COUNTRY_ID" Type="bigint" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MENU_MASTER">
+          <Key>
+            <PropertyRef Name="MENU_ID" />
+          </Key>
+          <Property Name="MENU_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MENU_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="MODULE_ID" Type="bigint" />
+          <Property Name="DISPLAY" Type="varchar" MaxLength="100" />
+          <Property Name="SEQUENCE" Type="varchar" MaxLength="2" />
+          <Property Name="HAS_SUBMENU" Type="bit" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="1000" />
+          <Property Name="CSS_ICON" Type="varchar" MaxLength="300" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MODULE_MASTER">
+          <Key>
+            <PropertyRef Name="MODULE_ID" />
+          </Key>
+          <Property Name="MODULE_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MODULE_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="DISPLAY" Type="varchar" MaxLength="100" />
+          <Property Name="SEQUENCE" Type="varchar" MaxLength="2" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="1000" />
+          <Property Name="CSS_ICON" Type="varchar" MaxLength="300" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ROLE_MASTER">
+          <Key>
+            <PropertyRef Name="ROLE_ID" />
+          </Key>
+          <Property Name="ROLE_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROLE_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="ROLE_CODE" Type="varchar" MaxLength="50" />
+          <Property Name="LEVEL" Type="varchar" MaxLength="10" />
+          <Property Name="HIERARCHY" Type="varchar" MaxLength="20" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="20" />
+          <Property Name="PARENT_ROLE_ID" Type="bigint" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ROLE_MODULE_MAPPING">
+          <Key>
+            <PropertyRef Name="ROLE_MODULE_MAPPING_ID" />
+          </Key>
+          <Property Name="ROLE_MODULE_MAPPING_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROLE_ID" Type="bigint" />
+          <Property Name="MODULE_ID" Type="bigint" />
+          <Property Name="MENU_ID" Type="bigint" />
+          <Property Name="SUBMENU_ID" Type="bigint" />
+          <Property Name="CONTROL_ID" Type="varchar" MaxLength="50" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="1000" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="STATE_MASTER">
+          <Key>
+            <PropertyRef Name="STATE_ID" />
+          </Key>
+          <Property Name="STATE_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STATE_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="COUNTRY_ID" Type="bigint" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="1000" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="STORE_MASTER">
+          <Key>
+            <PropertyRef Name="STORE_ID" />
+          </Key>
+          <Property Name="STORE_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STORE_NAME" Type="varchar" MaxLength="200" />
+          <Property Name="STORE_CODE" Type="varchar" MaxLength="50" />
+          <Property Name="FROM_TRACKING_NO" Type="varchar" MaxLength="100" />
+          <Property Name="TO_TRACKING_NO" Type="varchar" MaxLength="100" />
+          <Property Name="CURRENT_TRACKING_NO" Type="varchar" MaxLength="100" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="1000" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="STORE_TRACKING_MASTER">
+          <Key>
+            <PropertyRef Name="STORE_TRACKING_ID" />
+          </Key>
+          <Property Name="STORE_TRACKING_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STORE_ID" Type="bigint" />
+          <Property Name="FROM_TRACKING_NO" Type="varchar" MaxLength="100" />
+          <Property Name="TO_TRACKING_NO" Type="varchar" MaxLength="100" />
+          <Property Name="CURRENT_TRACKING_NO" Type="varchar" MaxLength="100" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SUBMENU_MASTER">
+          <Key>
+            <PropertyRef Name="SUBMENU_ID" />
+          </Key>
+          <Property Name="SUBMENU_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SUBMENU_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="MODULE_ID" Type="bigint" />
+          <Property Name="MENU_ID" Type="bigint" />
+          <Property Name="URL" Type="varchar" MaxLength="500" />
+          <Property Name="DISPLAY" Type="varchar" MaxLength="100" />
+          <Property Name="SEQUENCE" Type="varchar" MaxLength="2" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="1000" />
+          <Property Name="CSS_ICON" Type="varchar" MaxLength="300" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="USER_MASTER">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USER_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="FIRST_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="LAST_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="EMAIL_ID" Type="varchar" MaxLength="100" />
+          <Property Name="GENDER" Type="varchar" MaxLength="10" />
+          <Property Name="STREET" Type="varchar" MaxLength="500" />
+          <Property Name="LANDMARK" Type="varchar" MaxLength="500" />
+          <Property Name="CITY" Type="varchar" MaxLength="100" />
+          <Property Name="DISTRICT" Type="varchar" MaxLength="100" />
+          <Property Name="STATE_ID" Type="bigint" />
+          <Property Name="COUNTRY_ID" Type="bigint" />
+          <Property Name="PINCODE" Type="varchar" MaxLength="10" />
+          <Property Name="IMEI_NUMBER" Type="varchar" MaxLength="100" />
+          <Property Name="DATE_OF_BIRTH" Type="datetime" />
+          <Property Name="CONTACT_NO" Type="varchar" MaxLength="20" />
+          <Property Name="ALTERNATE_CONTACT_NO" Type="varchar" MaxLength="200" />
+          <Property Name="PROFILE_PHOTO" Type="varchar" MaxLength="1000" />
+          <Property Name="PROFILE_PHOTO_URL" Type="varchar" MaxLength="1000" />
+          <Property Name="STORE_ID" Type="bigint" />
+          <Property Name="ROLE_ID" Type="bigint" />
+          <Property Name="PARENT_USER_ID" Type="bigint" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="100" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="100" />
+          <Property Name="IS_LOG_OUT" Type="bit" />
+          <Property Name="WEB_LOGGEDIN_ON" Type="datetime" />
+          <Property Name="MOBILE_LOGGEDIN_ON" Type="datetime" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="USERTYPE_MASTER">
+          <Key>
+            <PropertyRef Name="USERTYPE_ID" />
+          </Key>
+          <Property Name="USERTYPE_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERTYPE_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="USERTYPE_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="LEVEL" Type="varchar" MaxLength="20" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="1000" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="VOID_TRACKING_TRANSACTION">
+          <Key>
+            <PropertyRef Name="VOID_TRACKING_TRANSACTION_ID" />
+          </Key>
+          <Property Name="VOID_TRACKING_TRANSACTION_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STORE_ID" Type="bigint" />
+          <Property Name="CANCELLATION_ID" Type="bigint" />
+          <Property Name="CREDIT_NOTE_AMOUNT" Type="float" />
+          <Property Name="TRACKING_NUMBER" Type="varchar" MaxLength="100" />
+          <Property Name="CASHIER_ID" Type="bigint" />
+          <Property Name="IS_CASHIER_APPROVED" Type="bit" />
+          <Property Name="CASHIER_REMARK" Type="varchar" MaxLength="1000" />
+          <Property Name="MANAGER_ID" Type="bigint" />
+          <Property Name="IS_MANAGER_APPROVED" Type="bit" />
+          <Property Name="MANAGER_REMARK" Type="varchar" MaxLength="1000" />
+          <Property Name="STATUS" Type="varchar" MaxLength="50" />
+          <Property Name="DATA_SOURCE" Type="varchar" MaxLength="10" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="CREATED_BY" Type="bigint" />
+          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="MODIFIED_BY" Type="bigint" />
+          <Property Name="MODIFIED_ON" Type="datetime" />
+          <Property Name="DELETED_BY" Type="bigint" />
+          <Property Name="DELETED_ON" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="DbFargoApplicationModelStoreContainer">
+          <EntitySet Name="BOOKING_DAY_END_TRANSACTION" EntityType="Self.BOOKING_DAY_END_TRANSACTION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BOOKING_DAY_END_TRANSACTION_DETAILS" EntityType="Self.BOOKING_DAY_END_TRANSACTION_DETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BOOKING_ORDER_DETAILS" EntityType="Self.BOOKING_ORDER_DETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BOOKING_PAYMENT_DETAILS" EntityType="Self.BOOKING_PAYMENT_DETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BOOKING_TRANSACTION_MASTER" EntityType="Self.BOOKING_TRANSACTION_MASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CANCELLATION_REASON" EntityType="Self.CANCELLATION_REASON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COUNTRY_MASTER" EntityType="Self.COUNTRY_MASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CREDIT_CUSTOMER" EntityType="Self.CREDIT_CUSTOMER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DENOMINATION_MASTER" EntityType="Self.DENOMINATION_MASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MENU_MASTER" EntityType="Self.MENU_MASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MODULE_MASTER" EntityType="Self.MODULE_MASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLE_MASTER" EntityType="Self.ROLE_MASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLE_MODULE_MAPPING" EntityType="Self.ROLE_MODULE_MAPPING" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STATE_MASTER" EntityType="Self.STATE_MASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STORE_MASTER" EntityType="Self.STORE_MASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STORE_TRACKING_MASTER" EntityType="Self.STORE_TRACKING_MASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUBMENU_MASTER" EntityType="Self.SUBMENU_MASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER_MASTER" EntityType="Self.USER_MASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERTYPE_MASTER" EntityType="Self.USERTYPE_MASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VOID_TRACKING_TRANSACTION" EntityType="Self.VOID_TRACKING_TRANSACTION" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbFargoApplicationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DbFargoApplicationEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="SP_GET_USER_MASTER_DATA">
+          <Parameter Name="USER_ID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <EntitySet Name="BOOKING_ORDER_DETAILS" EntityType="DbFargoApplicationModel.BOOKING_ORDER_DETAILS" />
+          <EntitySet Name="COUNTRY_MASTER" EntityType="DbFargoApplicationModel.COUNTRY_MASTER" />
+          <EntitySet Name="CREDIT_CUSTOMER" EntityType="DbFargoApplicationModel.CREDIT_CUSTOMER" />
+          <EntitySet Name="DENOMINATION_MASTER" EntityType="DbFargoApplicationModel.DENOMINATION_MASTER" />
+          <EntitySet Name="ROLE_MASTER" EntityType="DbFargoApplicationModel.ROLE_MASTER" />
+          <EntitySet Name="ROLE_MODULE_MAPPING" EntityType="DbFargoApplicationModel.ROLE_MODULE_MAPPING" />
+          <EntitySet Name="STATE_MASTER" EntityType="DbFargoApplicationModel.STATE_MASTER" />
+          <EntitySet Name="STORE_TRACKING_MASTER" EntityType="DbFargoApplicationModel.STORE_TRACKING_MASTER" />
+          <EntitySet Name="USERTYPE_MASTER" EntityType="DbFargoApplicationModel.USERTYPE_MASTER" />
+          <EntitySet Name="BOOKING_DAY_END_TRANSACTION_DETAILS" EntityType="DbFargoApplicationModel.BOOKING_DAY_END_TRANSACTION_DETAILS" />
+          <EntitySet Name="MENU_MASTER" EntityType="DbFargoApplicationModel.MENU_MASTER" />
+          <EntitySet Name="MODULE_MASTER" EntityType="DbFargoApplicationModel.MODULE_MASTER" />
+          <EntitySet Name="SUBMENU_MASTER" EntityType="DbFargoApplicationModel.SUBMENU_MASTER" />
+          <EntitySet Name="BOOKING_DAY_END_TRANSACTION" EntityType="DbFargoApplicationModel.BOOKING_DAY_END_TRANSACTION" />
+          <EntitySet Name="BOOKING_PAYMENT_DETAILS" EntityType="DbFargoApplicationModel.BOOKING_PAYMENT_DETAILS" />
+          <EntitySet Name="CANCELLATION_REASON" EntityType="DbFargoApplicationModel.CANCELLATION_REASON" />
+          <EntitySet Name="VOID_TRACKING_TRANSACTION" EntityType="DbFargoApplicationModel.VOID_TRACKING_TRANSACTION" />
+          <EntitySet Name="BOOKING_TRANSACTION_MASTER" EntityType="DbFargoApplicationModel.BOOKING_TRANSACTION_MASTER" />
+          <EntitySet Name="USER_MASTER" EntityType="DbFargoApplicationModel.USER_MASTER" />
+          <EntitySet Name="STORE_MASTER" EntityType="DbFargoApplicationModel.STORE_MASTER" />
+          </EntityContainer>
+        <EntityType Name="BOOKING_ORDER_DETAILS">
+          <Key>
+            <PropertyRef Name="BOOKING_ORDER_DETAILS_ID" />
+          </Key>
+          <Property Name="BOOKING_ORDER_DETAILS_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int64" />
+          <Property Name="BOOKING_TRANSACTION_ID" Type="Int64" />
+          <Property Name="ORDER_NUMBER" MaxLength="100" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="TRACKING_NUMBER" MaxLength="100" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="STATUS" MaxLength="100" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="DESCRIPTION" MaxLength="1000" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="DATA_SOURCE" MaxLength="10" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Precision="3" Type="DateTime" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Precision="3" Type="DateTime" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Precision="3" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="COUNTRY_MASTER">
+          <Key>
+            <PropertyRef Name="COUNTRY_ID" />
+          </Key>
+          <Property Name="COUNTRY_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COUNTRY_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="COUNTRY_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CREDIT_CUSTOMER">
+          <Key>
+            <PropertyRef Name="CUSTOMER_ID" />
+          </Key>
+          <Property Name="CUSTOMER_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CUSTOMER_CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CUSTOMER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="COUNTRY_ID" Type="Int64" />
+          <Property Name="STATE_ID" Type="Int64" />
+          <Property Name="CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="PIN_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="COMPANY" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CUSTOMER_COMMISSION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="DENOMINATION_MASTER">
+          <Key>
+            <PropertyRef Name="DENOMINATION_ID" />
+          </Key>
+          <Property Name="DENOMINATION_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VALUE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SYMBOL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="INITIALS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="COUNTRY_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="COUNTRY_ID" Type="Int64" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ROLE_MASTER">
+          <Key>
+            <PropertyRef Name="ROLE_ID" />
+          </Key>
+          <Property Name="ROLE_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ROLE_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LEVEL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="HIERARCHY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PARENT_ROLE_ID" Type="Int64" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ROLE_MODULE_MAPPING">
+          <Key>
+            <PropertyRef Name="ROLE_MODULE_MAPPING_ID" />
+          </Key>
+          <Property Name="ROLE_MODULE_MAPPING_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MODULE_ID" Type="Int64" />
+          <Property Name="SUBMENU_ID" Type="Int64" />
+          <Property Name="MENU_ID" Type="Int64" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+          <Property Name="ROLE_ID" Type="Int64" />
+          <Property Name="CONTROL_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="STATE_MASTER">
+          <Key>
+            <PropertyRef Name="STATE_ID" />
+          </Key>
+          <Property Name="STATE_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STATE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="COUNTRY_ID" Type="Int64" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="STORE_TRACKING_MASTER">
+          <Key>
+            <PropertyRef Name="STORE_TRACKING_ID" />
+          </Key>
+          <Property Name="STORE_TRACKING_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STORE_ID" Type="Int64" />
+          <Property Name="FROM_TRACKING_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TO_TRACKING_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CURRENT_TRACKING_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="USERTYPE_MASTER">
+          <Key>
+            <PropertyRef Name="USERTYPE_ID" />
+          </Key>
+          <Property Name="USERTYPE_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERTYPE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="USERTYPE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LEVEL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BOOKING_DAY_END_TRANSACTION_DETAILS">
+          <Key>
+            <PropertyRef Name="BOOKING_DAY_END_TRANSACTION_DETAILS_ID" />
+          </Key>
+          <Property Name="BOOKING_DAY_END_TRANSACTION_DETAILS_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BOOKING_DAY_END_TRANSACTION_ID" Type="Int64" />
+          <Property Name="DENOMINATION_ID" Type="Int64" />
+          <Property Name="QUANTITY" Type="Double" />
+          <Property Name="AMOUNT" Type="Double" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MENU_MASTER">
+          <Key>
+            <PropertyRef Name="MENU_ID" />
+          </Key>
+          <Property Name="MENU_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MENU_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MODULE_ID" Type="Int64" />
+          <Property Name="DISPLAY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SEQUENCE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="HAS_SUBMENU" Type="Boolean" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="CSS_ICON" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MODULE_MASTER">
+          <Key>
+            <PropertyRef Name="MODULE_ID" />
+          </Key>
+          <Property Name="MODULE_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MODULE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DISPLAY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SEQUENCE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="CSS_ICON" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SUBMENU_MASTER">
+          <Key>
+            <PropertyRef Name="SUBMENU_ID" />
+          </Key>
+          <Property Name="SUBMENU_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SUBMENU_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MODULE_ID" Type="Int64" />
+          <Property Name="MENU_ID" Type="Int64" />
+          <Property Name="URL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DISPLAY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SEQUENCE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="CSS_ICON" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BOOKING_DAY_END_TRANSACTION">
+          <Key>
+            <PropertyRef Name="BOOKING_DAY_END_TRANSACTION_ID" />
+          </Key>
+          <Property Name="BOOKING_DAY_END_TRANSACTION_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STORE_ID" Type="Int64" />
+          <Property Name="CASHIER_ID" Type="Int64" />
+          <Property Name="IS_CASHIER_APPROVED" Type="Boolean" />
+          <Property Name="CASHIER_REMARK" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="TOTAL_AMOUNT" Type="Double" />
+          <Property Name="MANAGER_ID" Type="Int64" />
+          <Property Name="IS_MANAGER_APPROVED" Type="Boolean" />
+          <Property Name="MANAGER_REMARK" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BOOKING_PAYMENT_DETAILS">
+          <Key>
+            <PropertyRef Name="BOOKING_PAYMENT_DETAILS_ID" />
+          </Key>
+          <Property Name="BOOKING_PAYMENT_DETAILS_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BOOKING_TRANSACTION_ID" Type="Int64" />
+          <Property Name="REFERENCE_NUMBER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PAYMENT_MODE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AMOUNT" Type="Double" />
+          <Property Name="STATUS" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CANCELLATION_REASON">
+          <Key>
+            <PropertyRef Name="CANCELLATION_ID" />
+          </Key>
+          <Property Name="CANCELLATION_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="REASON" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="VOID_TRACKING_TRANSACTION">
+          <Key>
+            <PropertyRef Name="VOID_TRACKING_TRANSACTION_ID" />
+          </Key>
+          <Property Name="VOID_TRACKING_TRANSACTION_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STORE_ID" Type="Int64" />
+          <Property Name="CANCELLATION_ID" Type="Int64" />
+          <Property Name="CREDIT_NOTE_AMOUNT" Type="Double" />
+          <Property Name="TRACKING_NUMBER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CASHIER_ID" Type="Int64" />
+          <Property Name="IS_CASHIER_APPROVED" Type="Boolean" />
+          <Property Name="CASHIER_REMARK" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="MANAGER_ID" Type="Int64" />
+          <Property Name="IS_MANAGER_APPROVED" Type="Boolean" />
+          <Property Name="MANAGER_REMARK" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BOOKING_TRANSACTION_MASTER">
+          <Key>
+            <PropertyRef Name="BOOKING_TRANSACTION_ID" />
+          </Key>
+          <Property Name="BOOKING_TRANSACTION_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USER_ID" Type="Int64" />
+          <Property Name="CASHIER_ID" Type="Int64" />
+          <Property Name="STORE_ID" Type="Int64" />
+          <Property Name="IMEI_NUMBER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CUSTOMER_ID" Type="Int64" />
+          <Property Name="CUSTOMER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CUSTOMER_CONTACT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="COURIER_ADDRESS" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="TOTAL_AMOUNT" Type="Double" />
+          <Property Name="DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TIME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="USER_MASTER">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USER_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GENDER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="STREET" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="LANDMARK" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DISTRICT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="STATE_ID" Type="Int64" />
+          <Property Name="COUNTRY_ID" Type="Int64" />
+          <Property Name="PINCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IMEI_NUMBER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_OF_BIRTH" Type="DateTime" Precision="3" />
+          <Property Name="CONTACT_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ALTERNATE_CONTACT_NO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PROFILE_PHOTO" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="PROFILE_PHOTO_URL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="STORE_ID" Type="Int64" />
+          <Property Name="ROLE_ID" Type="Int64" />
+          <Property Name="PARENT_USER_ID" Type="Int64" />
+          <Property Name="USERNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IS_LOG_OUT" Type="Boolean" />
+          <Property Name="WEB_LOGGEDIN_ON" Type="DateTime" Precision="3" />
+          <Property Name="MOBILE_LOGGEDIN_ON" Type="DateTime" Precision="3" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="STORE_MASTER">
+          <Key>
+            <PropertyRef Name="STORE_ID" />
+          </Key>
+          <Property Name="STORE_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STORE_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="STORE_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FROM_TRACKING_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TO_TRACKING_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CURRENT_TRACKING_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int64" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_BY" Type="Int64" />
+          <Property Name="MODIFIED_ON" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int64" />
+          <Property Name="DELETED_ON" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbFargoApplicationModelStoreContainer" CdmEntityContainer="DbFargoApplicationEntities">
+          <EntitySetMapping Name="BOOKING_ORDER_DETAILS">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.BOOKING_ORDER_DETAILS">
+              <MappingFragment StoreEntitySet="BOOKING_ORDER_DETAILS">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="TRACKING_NUMBER" ColumnName="TRACKING_NUMBER" />
+                <ScalarProperty Name="ORDER_NUMBER" ColumnName="ORDER_NUMBER" />
+                <ScalarProperty Name="BOOKING_TRANSACTION_ID" ColumnName="BOOKING_TRANSACTION_ID" />
+                <ScalarProperty Name="BOOKING_ORDER_DETAILS_ID" ColumnName="BOOKING_ORDER_DETAILS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COUNTRY_MASTER">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.COUNTRY_MASTER">
+              <MappingFragment StoreEntitySet="COUNTRY_MASTER">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="COUNTRY_CODE" ColumnName="COUNTRY_CODE" />
+                <ScalarProperty Name="COUNTRY_NAME" ColumnName="COUNTRY_NAME" />
+                <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CREDIT_CUSTOMER">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.CREDIT_CUSTOMER">
+              <MappingFragment StoreEntitySet="CREDIT_CUSTOMER">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="CUSTOMER_COMMISSION" ColumnName="CUSTOMER_COMMISSION" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+                <ScalarProperty Name="PHONE_NO" ColumnName="PHONE_NO" />
+                <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+                <ScalarProperty Name="PIN_CODE" ColumnName="PIN_CODE" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="STATE_ID" ColumnName="STATE_ID" />
+                <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+                <ScalarProperty Name="CUSTOMER_NAME" ColumnName="CUSTOMER_NAME" />
+                <ScalarProperty Name="CUSTOMER_CODE" ColumnName="CUSTOMER_CODE" />
+                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DENOMINATION_MASTER">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.DENOMINATION_MASTER">
+              <MappingFragment StoreEntitySet="DENOMINATION_MASTER">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+                <ScalarProperty Name="COUNTRY_CODE" ColumnName="COUNTRY_CODE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="INITIALS" ColumnName="INITIALS" />
+                <ScalarProperty Name="SYMBOL" ColumnName="SYMBOL" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="DENOMINATION_ID" ColumnName="DENOMINATION_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLE_MASTER">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.ROLE_MASTER">
+              <MappingFragment StoreEntitySet="ROLE_MASTER">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="PARENT_ROLE_ID" ColumnName="PARENT_ROLE_ID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="HIERARCHY" ColumnName="HIERARCHY" />
+                <ScalarProperty Name="LEVEL" ColumnName="LEVEL" />
+                <ScalarProperty Name="ROLE_CODE" ColumnName="ROLE_CODE" />
+                <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLE_MODULE_MAPPING">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.ROLE_MODULE_MAPPING">
+              <MappingFragment StoreEntitySet="ROLE_MODULE_MAPPING">
+                <ScalarProperty Name="CONTROL_ID" ColumnName="CONTROL_ID" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="MENU_ID" ColumnName="MENU_ID" />
+                <ScalarProperty Name="SUBMENU_ID" ColumnName="SUBMENU_ID" />
+                <ScalarProperty Name="MODULE_ID" ColumnName="MODULE_ID" />
+                <ScalarProperty Name="ROLE_MODULE_MAPPING_ID" ColumnName="ROLE_MODULE_MAPPING_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STATE_MASTER">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.STATE_MASTER">
+              <MappingFragment StoreEntitySet="STATE_MASTER">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+                <ScalarProperty Name="STATE_NAME" ColumnName="STATE_NAME" />
+                <ScalarProperty Name="STATE_ID" ColumnName="STATE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STORE_TRACKING_MASTER">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.STORE_TRACKING_MASTER">
+              <MappingFragment StoreEntitySet="STORE_TRACKING_MASTER">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="CURRENT_TRACKING_NO" ColumnName="CURRENT_TRACKING_NO" />
+                <ScalarProperty Name="TO_TRACKING_NO" ColumnName="TO_TRACKING_NO" />
+                <ScalarProperty Name="FROM_TRACKING_NO" ColumnName="FROM_TRACKING_NO" />
+                <ScalarProperty Name="STORE_ID" ColumnName="STORE_ID" />
+                <ScalarProperty Name="STORE_TRACKING_ID" ColumnName="STORE_TRACKING_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERTYPE_MASTER">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.USERTYPE_MASTER">
+              <MappingFragment StoreEntitySet="USERTYPE_MASTER">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="LEVEL" ColumnName="LEVEL" />
+                <ScalarProperty Name="USERTYPE_CODE" ColumnName="USERTYPE_CODE" />
+                <ScalarProperty Name="USERTYPE_NAME" ColumnName="USERTYPE_NAME" />
+                <ScalarProperty Name="USERTYPE_ID" ColumnName="USERTYPE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BOOKING_DAY_END_TRANSACTION_DETAILS">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.BOOKING_DAY_END_TRANSACTION_DETAILS">
+              <MappingFragment StoreEntitySet="BOOKING_DAY_END_TRANSACTION_DETAILS">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+                <ScalarProperty Name="DENOMINATION_ID" ColumnName="DENOMINATION_ID" />
+                <ScalarProperty Name="BOOKING_DAY_END_TRANSACTION_ID" ColumnName="BOOKING_DAY_END_TRANSACTION_ID" />
+                <ScalarProperty Name="BOOKING_DAY_END_TRANSACTION_DETAILS_ID" ColumnName="BOOKING_DAY_END_TRANSACTION_DETAILS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MENU_MASTER">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.MENU_MASTER">
+              <MappingFragment StoreEntitySet="MENU_MASTER">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="CSS_ICON" ColumnName="CSS_ICON" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="HAS_SUBMENU" ColumnName="HAS_SUBMENU" />
+                <ScalarProperty Name="SEQUENCE" ColumnName="SEQUENCE" />
+                <ScalarProperty Name="DISPLAY" ColumnName="DISPLAY" />
+                <ScalarProperty Name="MODULE_ID" ColumnName="MODULE_ID" />
+                <ScalarProperty Name="MENU_NAME" ColumnName="MENU_NAME" />
+                <ScalarProperty Name="MENU_ID" ColumnName="MENU_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MODULE_MASTER">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.MODULE_MASTER">
+              <MappingFragment StoreEntitySet="MODULE_MASTER">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="CSS_ICON" ColumnName="CSS_ICON" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="SEQUENCE" ColumnName="SEQUENCE" />
+                <ScalarProperty Name="DISPLAY" ColumnName="DISPLAY" />
+                <ScalarProperty Name="MODULE_NAME" ColumnName="MODULE_NAME" />
+                <ScalarProperty Name="MODULE_ID" ColumnName="MODULE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUBMENU_MASTER">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.SUBMENU_MASTER">
+              <MappingFragment StoreEntitySet="SUBMENU_MASTER">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="CSS_ICON" ColumnName="CSS_ICON" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="SEQUENCE" ColumnName="SEQUENCE" />
+                <ScalarProperty Name="DISPLAY" ColumnName="DISPLAY" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="MENU_ID" ColumnName="MENU_ID" />
+                <ScalarProperty Name="MODULE_ID" ColumnName="MODULE_ID" />
+                <ScalarProperty Name="SUBMENU_NAME" ColumnName="SUBMENU_NAME" />
+                <ScalarProperty Name="SUBMENU_ID" ColumnName="SUBMENU_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BOOKING_DAY_END_TRANSACTION">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.BOOKING_DAY_END_TRANSACTION">
+              <MappingFragment StoreEntitySet="BOOKING_DAY_END_TRANSACTION">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="MANAGER_REMARK" ColumnName="MANAGER_REMARK" />
+                <ScalarProperty Name="IS_MANAGER_APPROVED" ColumnName="IS_MANAGER_APPROVED" />
+                <ScalarProperty Name="MANAGER_ID" ColumnName="MANAGER_ID" />
+                <ScalarProperty Name="TOTAL_AMOUNT" ColumnName="TOTAL_AMOUNT" />
+                <ScalarProperty Name="CASHIER_REMARK" ColumnName="CASHIER_REMARK" />
+                <ScalarProperty Name="IS_CASHIER_APPROVED" ColumnName="IS_CASHIER_APPROVED" />
+                <ScalarProperty Name="CASHIER_ID" ColumnName="CASHIER_ID" />
+                <ScalarProperty Name="STORE_ID" ColumnName="STORE_ID" />
+                <ScalarProperty Name="BOOKING_DAY_END_TRANSACTION_ID" ColumnName="BOOKING_DAY_END_TRANSACTION_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BOOKING_PAYMENT_DETAILS">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.BOOKING_PAYMENT_DETAILS">
+              <MappingFragment StoreEntitySet="BOOKING_PAYMENT_DETAILS">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="PAYMENT_MODE" ColumnName="PAYMENT_MODE" />
+                <ScalarProperty Name="REFERENCE_NUMBER" ColumnName="REFERENCE_NUMBER" />
+                <ScalarProperty Name="BOOKING_TRANSACTION_ID" ColumnName="BOOKING_TRANSACTION_ID" />
+                <ScalarProperty Name="BOOKING_PAYMENT_DETAILS_ID" ColumnName="BOOKING_PAYMENT_DETAILS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CANCELLATION_REASON">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.CANCELLATION_REASON">
+              <MappingFragment StoreEntitySet="CANCELLATION_REASON">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="REASON" ColumnName="REASON" />
+                <ScalarProperty Name="CANCELLATION_ID" ColumnName="CANCELLATION_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VOID_TRACKING_TRANSACTION">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.VOID_TRACKING_TRANSACTION">
+              <MappingFragment StoreEntitySet="VOID_TRACKING_TRANSACTION">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="MANAGER_REMARK" ColumnName="MANAGER_REMARK" />
+                <ScalarProperty Name="IS_MANAGER_APPROVED" ColumnName="IS_MANAGER_APPROVED" />
+                <ScalarProperty Name="MANAGER_ID" ColumnName="MANAGER_ID" />
+                <ScalarProperty Name="CASHIER_REMARK" ColumnName="CASHIER_REMARK" />
+                <ScalarProperty Name="IS_CASHIER_APPROVED" ColumnName="IS_CASHIER_APPROVED" />
+                <ScalarProperty Name="CASHIER_ID" ColumnName="CASHIER_ID" />
+                <ScalarProperty Name="TRACKING_NUMBER" ColumnName="TRACKING_NUMBER" />
+                <ScalarProperty Name="CREDIT_NOTE_AMOUNT" ColumnName="CREDIT_NOTE_AMOUNT" />
+                <ScalarProperty Name="CANCELLATION_ID" ColumnName="CANCELLATION_ID" />
+                <ScalarProperty Name="STORE_ID" ColumnName="STORE_ID" />
+                <ScalarProperty Name="VOID_TRACKING_TRANSACTION_ID" ColumnName="VOID_TRACKING_TRANSACTION_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BOOKING_TRANSACTION_MASTER">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.BOOKING_TRANSACTION_MASTER">
+              <MappingFragment StoreEntitySet="BOOKING_TRANSACTION_MASTER">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="TIME" ColumnName="TIME" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="TOTAL_AMOUNT" ColumnName="TOTAL_AMOUNT" />
+                <ScalarProperty Name="COURIER_ADDRESS" ColumnName="COURIER_ADDRESS" />
+                <ScalarProperty Name="CUSTOMER_CONTACT" ColumnName="CUSTOMER_CONTACT" />
+                <ScalarProperty Name="CUSTOMER_NAME" ColumnName="CUSTOMER_NAME" />
+                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+                <ScalarProperty Name="IMEI_NUMBER" ColumnName="IMEI_NUMBER" />
+                <ScalarProperty Name="STORE_ID" ColumnName="STORE_ID" />
+                <ScalarProperty Name="CASHIER_ID" ColumnName="CASHIER_ID" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="BOOKING_TRANSACTION_ID" ColumnName="BOOKING_TRANSACTION_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_MASTER">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.USER_MASTER">
+              <MappingFragment StoreEntitySet="USER_MASTER">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="MOBILE_LOGGEDIN_ON" ColumnName="MOBILE_LOGGEDIN_ON" />
+                <ScalarProperty Name="WEB_LOGGEDIN_ON" ColumnName="WEB_LOGGEDIN_ON" />
+                <ScalarProperty Name="IS_LOG_OUT" ColumnName="IS_LOG_OUT" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PARENT_USER_ID" ColumnName="PARENT_USER_ID" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="STORE_ID" ColumnName="STORE_ID" />
+                <ScalarProperty Name="PROFILE_PHOTO_URL" ColumnName="PROFILE_PHOTO_URL" />
+                <ScalarProperty Name="PROFILE_PHOTO" ColumnName="PROFILE_PHOTO" />
+                <ScalarProperty Name="ALTERNATE_CONTACT_NO" ColumnName="ALTERNATE_CONTACT_NO" />
+                <ScalarProperty Name="CONTACT_NO" ColumnName="CONTACT_NO" />
+                <ScalarProperty Name="DATE_OF_BIRTH" ColumnName="DATE_OF_BIRTH" />
+                <ScalarProperty Name="IMEI_NUMBER" ColumnName="IMEI_NUMBER" />
+                <ScalarProperty Name="PINCODE" ColumnName="PINCODE" />
+                <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+                <ScalarProperty Name="STATE_ID" ColumnName="STATE_ID" />
+                <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="LANDMARK" ColumnName="LANDMARK" />
+                <ScalarProperty Name="STREET" ColumnName="STREET" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="USER_CODE" ColumnName="USER_CODE" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STORE_MASTER">
+            <EntityTypeMapping TypeName="DbFargoApplicationModel.STORE_MASTER">
+              <MappingFragment StoreEntitySet="STORE_MASTER">
+                <ScalarProperty Name="DELETED_ON" ColumnName="DELETED_ON" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="CURRENT_TRACKING_NO" ColumnName="CURRENT_TRACKING_NO" />
+                <ScalarProperty Name="TO_TRACKING_NO" ColumnName="TO_TRACKING_NO" />
+                <ScalarProperty Name="FROM_TRACKING_NO" ColumnName="FROM_TRACKING_NO" />
+                <ScalarProperty Name="STORE_CODE" ColumnName="STORE_CODE" />
+                <ScalarProperty Name="STORE_NAME" ColumnName="STORE_NAME" />
+                <ScalarProperty Name="STORE_ID" ColumnName="STORE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

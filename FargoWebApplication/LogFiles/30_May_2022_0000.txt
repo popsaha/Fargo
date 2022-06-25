@@ -1,0 +1,168 @@
+-----------Exception Details on  30-05-2022 06:11:21 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 30-05-2022 06:11:21 AM
+
+Error Line No : line 40
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  30-05-2022 06:13:10 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 30-05-2022 06:13:10 AM
+
+Error Line No : line 40
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  30-05-2022 06:17:32 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 30-05-2022 06:17:32 AM
+
+Error Line No : line 40
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  30-05-2022 06:29:47 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 30-05-2022 06:29:47 AM
+
+Error Line No : line 40
+
+Error Message: EntityCommandCompilationException
+
+Exception Type: System.Data.Entity.Core.EntityCommandCompilationException
+
+Error Location : An error occurred while preparing the command definition. See the inner exception for details.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  30-05-2022 07:14:52 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 30-05-2022 07:14:52 AM
+
+Error Line No : line 40
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  30-05-2022 08:15:35 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 30-05-2022 08:15:35 AM
+
+Error Line No : line 40
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  30-05-2022 08:46:41 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 30-05-2022 08:46:41 AM
+
+Error Line No : line 40
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

@@ -1,0 +1,118 @@
+-----------Exception Details on  04-06-2022 07:51:40 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 04-06-2022 07:51:40 AM
+
+Error Line No : line 60
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid column name 'TRACKING_NUMBER'.
+Invalid column name 'AMOUNT'.
+Invalid column name 'PAYMENT_MODE'.
+Invalid column name 'REFERENCE_NUMBER'.
+Invalid column name 'TRACKING_NUMBER'.
+Invalid column name 'AMOUNT'.
+Invalid column name 'PAYMENT_MODE'.
+Invalid column name 'REFERENCE_NUMBER'.
+Invalid column name 'TRACKING_NUMBER'.
+Invalid column name 'AMOUNT'.
+Invalid column name 'PAYMENT_MODE'.
+Invalid column name 'REFERENCE_NUMBER'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  04-06-2022 07:51:40 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 04-06-2022 07:51:40 AM
+
+Error Line No : line 95
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Invalid column name 'TRACKING_NUMBER'.
+Invalid column name 'AMOUNT'.
+Invalid column name 'PAYMENT_MODE'.
+Invalid column name 'REFERENCE_NUMBER'.
+Invalid column name 'TRACKING_NUMBER'.
+Invalid column name 'AMOUNT'.
+Invalid column name 'PAYMENT_MODE'.
+Invalid column name 'REFERENCE_NUMBER'.
+Invalid column name 'TRACKING_NUMBER'.
+Invalid column name 'AMOUNT'.
+Invalid column name 'PAYMENT_MODE'.
+Invalid column name 'REFERENCE_NUMBER'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  04-06-2022 03:46:56 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 04-06-2022 03:46:56 PM
+
+Error Line No : ine 253
+
+Error Message: IndexOutOfRangeException
+
+Exception Type: System.IndexOutOfRangeException
+
+Error Location : BOOKING_TRANSACTION_ID
+
+ Error Page Url: http://localhost:6492/api/BookingTransactionAPI/LstBookingVoidTransaction
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  04-06-2022 08:53:00 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 04-06-2022 08:53:00 PM
+
+Error Line No : ine 256
+
+Error Message: FormatException
+
+Exception Type: System.FormatException
+
+Error Location : Input string was not in a correct format.
+
+ Error Page Url: http://localhost:6492/api/BookingTransactionAPI/LstBookingVoidTransaction
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

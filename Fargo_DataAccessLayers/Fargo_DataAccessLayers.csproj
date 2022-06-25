@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3ECF5B9C-F2AA-488F-A9E5-B1B3286C3C20}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fargo_DataAccessLayers</RootNamespace>
+    <AssemblyName>Fargo_DataAccessLayers</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BOOKING_DAY_END_TRANSACTION.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BOOKING_DAY_END_TRANSACTION_DETAILS.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BOOKING_ORDER_DETAILS.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BOOKING_PAYMENT_DETAILS.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BOOKING_TRANSACTION_MASTER.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CANCELLATION_REASON.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="clsDataAccess.cs" />
+    <Compile Include="COUNTRY_MASTER.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CREDIT_CUSTOMER.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DENOMINATION_MASTER.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FargoDataAccessLayerEF.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FargoDataAccessLayerEF.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FargoDataAccessLayerEF.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FargoDataAccessLayerEF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FargoDataAccessLayerEF.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MENU_MASTER.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODULE_MASTER.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ROLE_MASTER.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ROLE_MODULE_MAPPING.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STATE_MASTER.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STORE_MASTER.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STORE_TRACKING_MASTER.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SUBMENU_MASTER.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USERTYPE_MASTER.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_MASTER.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VOID_TRACKING_TRANSACTION.cs">
+      <DependentUpon>FargoDataAccessLayerEF.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="FargoDataAccessLayerEF.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FargoDataAccessLayerEF.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FargoDataAccessLayerEF.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FargoDataAccessLayerEF.edmx</DependentUpon>
+      <LastGenOutput>FargoDataAccessLayerEF.Context.cs</LastGenOutput>
+    </None>
+    <None Include="FargoDataAccessLayerEF.edmx.diagram">
+      <DependentUpon>FargoDataAccessLayerEF.edmx</DependentUpon>
+    </None>
+    <None Include="FargoDataAccessLayerEF.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FargoDataAccessLayerEF.edmx</DependentUpon>
+      <LastGenOutput>FargoDataAccessLayerEF.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

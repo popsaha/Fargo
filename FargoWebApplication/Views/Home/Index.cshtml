@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="~/Assets/js/jquery/jquery.min.js"></script>
+
+<div class="main-body">
+    <div class="page-wrapper">
+
+        <div class="page-body">
+            <div class="row">
+
+                <!-- order-card start -->
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-blue order-card">
+                        <div class="card-block">
+                            <h6 class="m-b-20">Total Transaction Count</h6>
+                            <h2 class="text-right"><i class="ti-plus f-left"></i><span>@ViewBag.TotalTransactionCount</span></h2>
+                            @*<p class="m-b-0">Completed Orders</p>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-green order-card">
+                        <div class="card-block">
+                            <h6 class="m-b-20">Total User Count</h6>
+                            <h2 class="text-right"><i class="ti-plus f-left"></i><span>@ViewBag.TotalUserCount</span></h2>
+                            @*<p class="m-b-0">This Month<span class="f-right">213</span></p>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-yellow order-card">
+                        <div class="card-block">
+                            <h6 class="m-b-20">Total Role Count</h6>
+                            <h2 class="text-right"><i class="ti-plus f-left"></i><span>@ViewBag.TotalRoleCount</span></h2>
+                            @*<p class="m-b-0">This Month<span class="f-right">$5,032</span></p>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-pink order-card">
+                        <div class="card-block">
+                            <h6 class="m-b-20">Total Store Count</h6>
+                            <h2 class="text-right"><i class="ti-plus f-left"></i><span>@ViewBag.TotalStoreCount</span></h2>
+                            @*<p class="m-b-0">This Month<span class="f-right">$542</span></p>*@
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+        <div class="card">
+            
+            <div class="card-block table-border-style">
+                <div class="table-responsive">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span class="label label-success">Booking Transaction</span>
+                            <table id="tblTransaction" class="table table-bordered table-hover">
+                                <thead style="background-color:#ced1ce; color:white">
+                                    <tr style="background-color:#ced1ce" class="label label-success">
+                                        <td><b><label style="color:white">Store</label></b></td>
+                                        <td><b><label style="color:white">Amount</label></b></td>
+                                        <td><b><label style="color:white">Customer</label></b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (ViewBag.LstBookingTransaction != null)
+                                    {
+                                        int Count = 0;
+                                        foreach (var BookingTransaction in ViewBag.LstBookingTransaction)
+                                        {
+                                            Count = Count + 1;
+                                            <tr>
+                                                <td style="font-size:13px">@BookingTransaction.STORE_NAME</td>
+                                                <td style="font-size:13px">@BookingTransaction.TOTAL_AMOUNT</td>
+                                                <td style="font-size:13px">@BookingTransaction.CUSTOMER_NAME</td>
+                                            </tr>
+                                        }
+                                    }
+
+                                </tbody>
+                            </table>
+                            
+
+                        </div>
+
+                        <div class="col-lg-6">
+                            <span class="label label-warning">Void Transaction</span>
+                            <table id="tblVoidTransaction" class="table table-bordered table-hover">
+                                <thead style="background-color:#ced1ce; color:white">
+                                    <tr style="background-color:#ced1ce" class="label label-warning">
+                                        <td><b><label style="color:white">Cashier</label></b></td>
+                                        <td><b><label style="color:white">Manager</label></b></td>
+                                        <td><b><label style="color:white">Tracking No</label></b></td>
+                                        <td><b><label style="color:white">Sent On</label></b></td>
+                                        <td><b><label style="color:white">Replied On</label></b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (ViewBag.LstVoidTransaction != null)
+                                    {
+                                        int Count = 0;
+                                        foreach (var VoidTransaction in ViewBag.LstVoidTransaction)
+                                        {
+                                            Count = Count + 1;
+                                            <tr>
+                                                <td style="font-size:13px">@VoidTransaction.CASHIER_NAME</td>
+                                                <td style="font-size:13px">@VoidTransaction.MANAGER_NAME</td>
+                                                <td style="font-size:13px">@VoidTransaction.TRACKING_NUMBER</td>
+                                                <td style="font-size:13px">@VoidTransaction.REQUESTED_DATE</td>
+                                                <td style="font-size:13px">@VoidTransaction.RESPONDED_DATE</td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        <div id="styleSelector">
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="~/Assets/js/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        const tblTransaction = new simpleDatatables.DataTable("#tblTransaction");
+        const tblVoidTransaction = new simpleDatatables.DataTable("#tblVoidTransaction");
+    });
+</script>

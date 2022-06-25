@@ -1,0 +1,264 @@
+-----------Exception Details on  10-06-2022 12:21:08 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 10-06-2022 12:21:08 AM
+
+Error Line No : line 45
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Procedure or function 'spBookingDayEndCloseTransaction' expects parameter '@CASHIER_REMARK', which was not supplied.
+
+ Error Page Url: http://localhost:6492/api/BookingDayEndCloseAPI/LstDayEndCloseRequest
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  10-06-2022 12:21:08 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 10-06-2022 12:21:08 AM
+
+Error Line No : line 45
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Procedure or function 'spBookingDayEndCloseTransaction' expects parameter '@CASHIER_REMARK', which was not supplied.
+
+ Error Page Url: http://localhost:6492/api/BookingDayEndCloseAPI/LstDayEndCloseRequest
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  10-06-2022 12:21:12 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 10-06-2022 12:21:12 AM
+
+Error Line No : line 60
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spReport'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  10-06-2022 12:21:13 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 10-06-2022 12:21:13 AM
+
+Error Line No : line 95
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Could not find stored procedure 'spReport'.
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  10-06-2022 11:01:24 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 10-06-2022 11:01:24 AM
+
+Error Line No : ine 186
+
+Error Message: NullReferenceException
+
+Exception Type: System.NullReferenceException
+
+Error Location : Object reference not set to an instance of an object.
+
+ Error Page Url: http://localhost:6492/api/BookingTransactionAPI/BookingTransactionMaster
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  10-06-2022 11:01:24 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 10-06-2022 11:01:24 AM
+
+Error Line No : ine 213
+
+Error Message: NullReferenceException
+
+Exception Type: System.NullReferenceException
+
+Error Location : Object reference not set to an instance of an object.
+
+ Error Page Url: http://localhost:6492/api/BookingTransactionAPI/BookingTransactionMaster
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  10-06-2022 11:01:25 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 10-06-2022 11:01:25 AM
+
+Error Line No : ine 158
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Trying to pass a table-valued parameter with 11 column(s) where the corresponding user-defined table type requires 16 column(s).
+
+ Error Page Url: http://localhost:6492/api/BookingTransactionAPI/BookingTransactionMaster
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  10-06-2022 01:42:49 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 10-06-2022 01:42:49 PM
+
+Error Line No : line 37
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Procedure or function 'spBookingDayEndCloseTransaction' expects parameter '@CASHIER_REMARK', which was not supplied.
+
+ Error Page Url: http://localhost:6492/api/BookingDayEndCloseAPI/SubmitDayEndCloseRequest
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  10-06-2022 08:58:53 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 10-06-2022 08:58:53 PM
+
+Error Line No : line 91
+
+Error Message: FormatException
+
+Exception Type: System.FormatException
+
+Error Location : Input string was not in a correct format.
+
+ Error Page Url: http://localhost:6492/api/BookingDayEndCloseAPI/LstDayEndCloseRequest
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  10-06-2022 09:11:10 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 10-06-2022 09:11:10 PM
+
+Error Line No : line 93
+
+Error Message: FormatException
+
+Exception Type: System.FormatException
+
+Error Location : String was not recognized as a valid Boolean.
+
+ Error Page Url: http://localhost:6492/api/BookingDayEndCloseAPI/LstDayEndCloseRequest
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  10-06-2022 09:11:28 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 10-06-2022 09:11:28 PM
+
+Error Line No : line 93
+
+Error Message: FormatException
+
+Exception Type: System.FormatException
+
+Error Location : String was not recognized as a valid Boolean.
+
+ Error Page Url: http://localhost:6492/api/BookingDayEndCloseAPI/LstDayEndCloseRequest
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

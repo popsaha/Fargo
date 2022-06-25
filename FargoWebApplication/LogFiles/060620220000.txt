@@ -1,0 +1,216 @@
+-----------Exception Details on  06-06-2022 07:59:06 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 06-06-2022 07:59:06 AM
+
+Error Line No : ine 250
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Connection Timeout Expired.  The timeout period elapsed while attempting to consume the pre-login handshake acknowledgement.  This could be because the pre-login handshake failed or the server was unable to respond back in time.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=3562; handshake=12531; 
+
+ Error Page Url: http://localhost:6492/api/BookingTransactionAPI/LstVoidTrackingTransaction
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  06-06-2022 08:07:32 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 06-06-2022 08:07:32 AM
+
+Error Line No : ine 250
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+
+ Error Page Url: http://localhost:6492/api/BookingTransactionAPI/LstVoidTrackingTransaction
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  06-06-2022 08:17:30 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 06-06-2022 08:17:30 AM
+
+Error Line No : ine 296
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Connection Timeout Expired.  The timeout period elapsed while attempting to consume the pre-login handshake acknowledgement.  This could be because the pre-login handshake failed or the server was unable to respond back in time.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=8915; handshake=14337; 
+
+ Error Page Url: http://localhost:6492/api/BookingTransactionAPI/SubmitTransactionForApproval
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  06-06-2022 08:22:43 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 06-06-2022 08:22:43 AM
+
+Error Line No : line 40
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  06-06-2022 08:54:21 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 06-06-2022 08:54:21 AM
+
+Error Line No : line 40
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  06-06-2022 08:55:09 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 06-06-2022 08:55:09 AM
+
+Error Line No : line 40
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  06-06-2022 08:56:40 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 06-06-2022 08:56:40 AM
+
+Error Line No : line 40
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  06-06-2022 08:56:57 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 06-06-2022 08:56:57 AM
+
+Error Line No : line 40
+
+Error Message: EntityException
+
+Exception Type: System.Data.Entity.Core.EntityException
+
+Error Location : The underlying provider failed on Open.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  06-06-2022 08:57:46 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 06-06-2022 08:57:46 AM
+
+Error Line No : line 60
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+
+ Error Page Url: http://localhost:6492/Home/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

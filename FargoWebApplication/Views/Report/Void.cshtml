@@ -1,0 +1,158 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Fargo_Models.VoidTrackingTransactionModel
+<style>
+    .fontDesign {
+        color: #666666;
+        font-weight: bold;
+        font-size: 13px;
+    }
+</style>
+@if (ViewBag.IsData == "0")
+{
+    <script>alert('Data not found');</script>
+}
+
+<style type="text/css">
+    #loader {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../../Images/480px-Loader.gif');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: white;
+        z-index: 10000;
+    }
+</style>
+<div class="main-body">
+    <div class="page-wrapper">
+
+
+        <div class="page-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-block primary-breadcrumb" style="height:12px; background-color:#074434">
+                            <div class="breadcrumb-header" style="color:white">
+                                <h6>Void Transaction Report</h6>
+                            </div>
+                        </div>
+                        <div class="card-block">
+
+                            @using (Html.BeginForm("Void", "Report", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmTransaction" }))
+                            {
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="pcoded-mtext fontDesign">Store</span>
+                                            @Html.DropDownList("STORE_ID", ViewData["LstStores"] as IEnumerable<SelectListItem>, "--SELECT--", new { @class = "form-control select2", @id = "ddlStore" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="pcoded-mtext fontDesign">From Date</span>
+                                            @Html.TextBoxFor(x=>x.FROM_DATE, new { @class = "form-control", @id = "txtFromDate" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="pcoded-mtext fontDesign">To Date</span>
+                                            @Html.TextBoxFor(x => x.TO_DATE, new { @class = "form-control", @id = "txtToDate" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12" align="left">
+                                        <input type="submit" class="btn btn-success" id="btnSubmit" value="Search">
+                                        &nbsp;<button type="button" class="btn btn-warning" id="btnReset" onclick="fnReset()"><i class="fa fa-refresh"></i> Reset</button>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (ViewBag.LstVoidTrackingTransaction != null)
+        {
+          <!-- Page-body start -->
+            <div class="page-body">
+                <!-- Basic table card start -->
+                <div class="card">
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+
+                            <table id="tblTransaction" class="table table-bordered table-hover">
+                                <thead style="background-color:#074434; color:white">
+                                    <tr style="background-color:#074434">
+                                        <td><b><label style="color:white">SL No.</label></b></td>
+                                        <td><b><label style="color:white">Tracking No</label></b></td>
+                                        <td><b><label style="color:white">Cashier</label></b></td>
+                                        <td><b><label style="color:white">Manager</label></b></td>
+                                        <td><b><label style="color:white">Approved</label></b></td>
+                                        <td><b><label style="color:white">Sent On</label></b></td>
+                                        <td><b><label style="color:white">Replied On</label></b></td>
+                                        <td><b><label style="color:white">Store Name</label></b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{ int Count = 0;}
+                                    @foreach (var lstVoidTrackingTransaction in ViewBag.LstVoidTrackingTransaction)
+                                    {
+                                        Count = Count + 1;
+                                        <tr title='Status: "@lstVoidTrackingTransaction.STATUS"'>
+                                            <td>@Count</td>
+                                            <td>@lstVoidTrackingTransaction.TRACKING_NUMBER</td>
+                                            <td>@lstVoidTrackingTransaction.CASHIER_NAME</td>
+                                            <td>@lstVoidTrackingTransaction.MANAGER_NAME</td>
+                                            <td>@lstVoidTrackingTransaction.IS_MANAGER_APPROVED</td>
+                                            <td>@lstVoidTrackingTransaction.REQUESTED_DATE</td>
+                                            <td>@lstVoidTrackingTransaction.RESPONDED_DATE</td>
+                                            <td>@lstVoidTrackingTransaction.STORE_NAME</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Basic table card end -->
+            </div>
+        <!-- Page-body end -->
+        }
+      
+    </div>
+</div>
+<div id="loader" style="text-align:center; padding-top:20%;">
+    <span style="font-size:22px;color:#dce3de;">Please wait data is processing.....</span>
+</div>
+<div id="styleSelector">
+
+</div>
+<script type="text/javascript" src="~/Assets/js/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#txtFromDate, #txtToDate').datepicker({ dateFormat: 'dd-mm-yy' });
+        const dataTable = new simpleDatatables.DataTable("#tblTransaction");
+        
+    });
+
+    function fnReset() {
+        $("#ddlStore")[0].selectedIndex = 0;
+        $('#txtFromDate, #txtToDate').val('');
+        $('#ddlStore').focus();
+    }
+</script>
+
+
+

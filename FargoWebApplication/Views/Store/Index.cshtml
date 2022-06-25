@@ -1,0 +1,248 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    List<Fargo_Models.StoreModel> LstStores = (List<Fargo_Models.StoreModel>)ViewBag.LstStores;
+}
+
+@model Fargo_Models.StoreModel
+<style>
+    .fontDesign {
+        color: #666666;
+        font-weight: bold;
+        font-size: 13px;
+    }
+</style>
+
+<style type="text/css">
+    #loader {
+        background-color: transparent;
+        background: transparent;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: white;
+        z-index: 10000;
+    }
+</style>
+
+@if (ViewBag.Message != null)
+{
+    <script>alert('@ViewBag.Message');</script>
+}
+
+<div class="main-body">
+    <div class="page-wrapper">
+
+
+        <div class="page-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-block primary-breadcrumb" style="height:12px; background-color:#074434">
+                            <div class="breadcrumb-header">
+                                <h6><label style="color:white">Store Master</label></h6>
+                            </div>
+                        </div>
+                        <div class="card-block">
+
+                            @using (Html.BeginForm("Index", "Store", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmStore" }))
+                            {
+                                @Html.HiddenFor(x => x.STORE_ID, new { @id = "hdnStoreId" });
+                                <input type="hidden" id="hdnStoreId" />
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="pcoded-mtext fontDesign">Store Name</span>
+                                            @Html.TextBoxFor(x => x.STORE_NAME, new { @class = "form-control", @id = "txtStoreName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="pcoded-mtext fontDesign">Store Code</span>
+                                            @Html.TextBoxFor(x => x.STORE_CODE, new { @class = "form-control", @id = "txtStoreCode" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="pcoded-mtext fontDesign">Description</span>
+                                            @Html.TextBoxFor(x => x.DESCRIPTION, new { @class = "form-control", @id = "txtDescription" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12" align="left">
+                                        <div>
+                                            <input type="submit" class="btn btn-success" id="btnSubmit" value="Submit" name="Submit" onclick="return ValidateInputs();">
+                                            &nbsp;
+                                            <input type="submit" class="btn btn-primary" id="btnUpdate" value="Update" name="Update" onclick="return ValidateInputs();">
+                                            &nbsp;
+                                            <button type="button" class="btn btn-warning" id="btnReset" onclick="Reset()"><i class="fa fa-refresh"></i> Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      
+        <div class="page-body">
+            <!-- Basic table card start -->
+            <div class="card">
+                <div class="card-block table-border-style">
+                    <div class="table-responsive">
+                        <table id="tblStore" class="table table-hover">
+                            <thead style="background-color:#074434; color:white">
+                                <tr style="background-color:#074434">
+                                    <td><b><label style="color:white">SL No.</label></b></td>
+                                    <td><b><label style="color:white">Store Name</label></b></td>
+                                    <td><b><label style="color:white">Store Code</label></b></td>
+                                    <td><b><label style="color:white">Description</label></b></td>
+                                    <td><b><label style="color:white">Action</label></b></td>
+                                </tr>
+                            </thead>
+@if (LstStores.Count>0)
+       {
+                            <tbody>
+                                @{ int Count = 0;}
+                                @foreach (var store in ViewBag.LstStores)
+                                {
+                                    Count = Count + 1;
+                                    <tr id="tblRow_@store.STORE_ID">
+                                        <td>@Count</td>
+                                        <td><label class="clsRole">@store.STORE_NAME</label></td>
+                                        <td>@store.STORE_CODE</td>
+                                        <td>@store.DESCRIPTION</td>
+                                        @if (ViewBag.UserId == 1)
+                                        {
+                                            <td> <span onclick="Edit('@store.STORE_ID')" style="cursor:pointer" title="Edit"><i class="fa fa-pencil"></i></span>&nbsp;&nbsp;&nbsp;<span onclick="return Delete('@store.STORE_ID')" style="cursor:pointer" title="Delete"><i class="fa fa-trash"></i></span></td>
+                                        }
+                                        else
+                                        {
+                                            <td> <span onclick="alert('Please contact to administrator.')" style="cursor:pointer" title="Edit"><i class="fa fa-pencil"></i></span>&nbsp;&nbsp;&nbsp;<span onclick="alert('Please contact to administrator.')" style="cursor:pointer" title="Delete"><i class="fa fa-trash"></i></span></td>
+                                        }
+                                    </tr>
+                                }
+                            </tbody>
+}
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Basic table card end -->
+        </div>
+       
+        
+       
+    </div>
+</div>
+
+<div id="loader" style="text-align:center; padding-top:20%;">
+    <span style="font-size:22px;color:#dce3de;">Please wait...</span>
+</div>
+<div id="styleSelector"></div>
+<script type="text/javascript" src="~/Assets/js/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        Reset();
+        const dataTable = new simpleDatatables.DataTable("#tblStore");
+
+    });
+
+    function ValidateInputs() {
+        var IsValid = true;
+        var StoreName = $('#txtStoreName').val();
+        var StoreCode = $('#txtStoreCode').val();
+        var Description = $('#txtDescription').val();
+        if (StoreName.trim() == "") {
+            alert("Please enter role name.");
+            return false;
+        }
+        if (StoreCode.trim() == "") {
+            alert("Please enter store code.");
+            return false;
+        }
+        if (Description.trim() == "") {
+            alert("Please provide description.");
+            return false;
+        }
+
+        $(".clsStoreName").each(function () {
+            if ($(this).text() == StoreName) {
+                alert("Duplicate store name found !");
+                $('#txtStoreName').focus();
+                IsValid = false;
+            }
+        });
+        $(".clsStoreCode").each(function () {
+            if ($(this).text() == StoreCode) {
+                alert("Duplicate store code found !");
+                $('#txtStoreCode').focus();
+                IsValid = false;
+            }
+        });
+        return IsValid;
+    }
+
+    function Edit(STORE_ID) {
+        $('#loader').show();
+        $.ajax({
+            type: "POST",
+            url: "/STORE/Edit?STORE_ID=" + STORE_ID,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                $('#hdnStoreId').val(data.STORE_ID);
+                $('#txtStoreName').val(data.STORE_NAME);
+                $('#txtStoreCode').val(data.STORE_CODE);
+                $('#txtDescription').val(data.DESCRIPTION);
+                $('#btnSubmit').hide();
+                $('#btnUpdate').show();
+                $('#loader').hide();
+            },
+            error: function (response) {
+                alert("Some problem occured! Try again.");
+            }
+        });
+    }
+
+    function Delete(STORE_ID) {
+        var result = confirm('Are you sure want to delete?');
+        if (result == true) {
+            $('#loader').show();
+            $.ajax({
+                type: "POST",
+                url: "/STORE/Delete?STORE_ID=" + STORE_ID,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    alert(result);
+                    window.location.reload();
+                },
+                error: function (response) {
+                    alert("Some problem occured! Try again.");
+                }
+            });
+        }
+    }
+
+    function Reset() {
+        $('#hdnStoreId, #txtStoreName, #txtStoreCode, #txtDescription').val('');
+        $('#btnSubmit').show();
+        $('#btnUpdate').hide();
+    }
+</script>
+
+
+
