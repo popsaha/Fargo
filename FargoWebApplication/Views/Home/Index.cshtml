@@ -4,6 +4,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <script type="text/javascript" src="~/Assets/js/jquery/jquery.min.js"></script>
+<style>
+    .label{       
+        font-size: 15px;               
+    }
+    .label-success{
+        background: linear-gradient(45deg, #074434, #0a654d);
+    }
+    .label-warning {
+        background: linear-gradient(45deg, #074434, #0a654d);
+    }
+    .order-card{
+        background: linear-gradient(45deg, #074434, #0e8666);
+    }
+    /*.card .bg-c-blue .order-card{
+        background: linear-gradient(45deg, #074434, #0a654d);
+    }
+    .card .bg-c-green .order-card{
+        background: linear-gradient(45deg, #0a654d, #0e8666);
+    }
+    .card .bg-c-yellow .order-card{
+        background: linear-gradient(45deg, #0e8666, #11a77f);
+    }
+    .card .bg-c-pink .order-card{
+        background: linear-gradient(45deg, #11a77f, #15c799);
+    }*/
+</style>
 
 <div class="main-body">
     <div class="page-wrapper">
@@ -56,7 +82,7 @@
                 <div class="table-responsive">
                     <div class="row">
                         <div class="col-lg-6">
-                            <span class="label label-success">Booking Transaction</span>
+                            <span class="label label-main label-lg label-success">Booking Transaction</span>
                             <table id="tblTransaction" class="table table-bordered table-hover">
                                 <thead style="background-color:#ced1ce; color:white">
                                     <tr style="background-color:#ced1ce" class="label label-success">
@@ -87,10 +113,10 @@
                         </div>
 
                         <div class="col-lg-6">
-                            <span class="label label-warning">Void Transaction</span>
+                            <span class="label label-main label-lg label-success">Void Transaction</span>
                             <table id="tblVoidTransaction" class="table table-bordered table-hover">
                                 <thead style="background-color:#ced1ce; color:white">
-                                    <tr style="background-color:#ced1ce" class="label label-warning">
+                                    <tr style="background-color:#ced1ce" class="label label-success">
                                         <td><b><label style="color:white">Cashier</label></b></td>
                                         <td><b><label style="color:white">Manager</label></b></td>
                                         <td><b><label style="color:white">Tracking No</label></b></td>

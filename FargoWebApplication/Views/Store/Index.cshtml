@@ -31,6 +31,24 @@
         background-color: white;
         z-index: 10000;
     }
+    .btn{
+        background-color: #0a654d;
+        border-color: #0a654d;
+    }
+    .btn:hover{
+        background-color: #074434;
+        border-color: #074434;
+    }
+    .btn:active {
+        background-color: #0a654d !important;
+        border-color: #0a654d;
+    }
+    .btn:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    background-color: #074434;
+    }
 </style>
 
 @if (ViewBag.Message != null)
@@ -46,7 +64,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-block primary-breadcrumb" style="height:12px; background-color:#074434">
+                        <div class="card-block primary-breadcrumb" style="height:12px; background: linear-gradient(45deg, #074434, #0a654d);">
                             <div class="breadcrumb-header">
                                 <h6><label style="color:white">Store Master</label></h6>
                             </div>
@@ -103,8 +121,8 @@
                 <div class="card-block table-border-style">
                     <div class="table-responsive">
                         <table id="tblStore" class="table table-hover">
-                            <thead style="background-color:#074434; color:white">
-                                <tr style="background-color:#074434">
+                            <thead style="background-image: linear-gradient(45deg, #074434, #0a654d); color:white">
+                                <tr >
                                     <td><b><label style="color:white">SL No.</label></b></td>
                                     <td><b><label style="color:white">Store Name</label></b></td>
                                     <td><b><label style="color:white">Store Code</label></b></td>

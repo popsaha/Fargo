@@ -9,6 +9,26 @@
         font-weight: bold;
         font-size:13px
     }
+    .btn{
+        background-color: #0a654d;
+        border-color: #0a654d;
+    }
+    .btn:hover{
+        background-color: #074434;
+        border-color: #074434;
+    }
+    .btn:active {
+        background-color: #0a654d !important;
+        border-color: #0a654d;
+    }
+    .btn:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    background-color: #074434;
+    }
+    
+    
 </style>
 
 <style type="text/css">
@@ -37,9 +57,9 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-block primary-breadcrumb" style="height:12px; background-color:#074434">
+                        <div class="card-block primary-breadcrumb" style="height:12px; background: linear-gradient(45deg, #074434, #0a654d);">
                             <div class="breadcrumb-header">
-                                <h6><label style="color:white">User Master</label></h6>
+                                <h6><label style="color:white; ">User Master</label></h6>
                             </div>
                         </div>
                         <div class="card-block">
@@ -64,7 +84,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group fontDesign">
-                                            <label>EmailId <span class="text-danger" style="color:red"> *</span></label>
+                                            <label>Email Id <span class="text-danger" style="color:red"> *</span></label>
                                             <input type="email" class="form-control" id="txtEmailId" name="_EmailId">
                                             <span style="color:red;" id="divEmailId"></span>
                                         </div>
@@ -289,7 +309,7 @@
                     <div class="table-responsive">
                         <table id="tblUser" class="table table-bordered table-hover">
                             <thead>
-                                <tr style="background-color:#074434; color:white">
+                                <tr style="background: linear-gradient(45deg, #074434, #0a654d); color:white">
                                     <td><b><label style="color:white">SL No.</label></b></td>
                                     <td><b><label style="color:white">Name</label></b></td>
                                     <td><b><label style="color:white">Email Id</label></b></td>

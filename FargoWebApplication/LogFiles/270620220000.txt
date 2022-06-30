@@ -1,0 +1,144 @@
+-----------Exception Details on  27/06/2022 17:53:11-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 27/06/2022 17:53:11
+
+Error Line No : ine 162
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+
+ Error Page Url: http://localhost:6492/Report/Transaction
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  27/06/2022 17:53:27-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 27/06/2022 17:53:27
+
+Error Line No : line 23
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+
+ Error Page Url: http://localhost:6492/User/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  27/06/2022 17:54:11-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 27/06/2022 17:54:11
+
+Error Line No : line 23
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+
+ Error Page Url: http://localhost:6492/User/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  27/06/2022 18:11:44-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 27/06/2022 18:11:44
+
+Error Line No : line 23
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+
+ Error Page Url: http://localhost:6492/User/Index
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  27/06/2022 18:54:29-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 27/06/2022 18:54:29
+
+Error Line No : line 23
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  27/06/2022 18:54:29-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 27/06/2022 18:54:29
+
+Error Line No : line 46
+
+Error Message: NullReferenceException
+
+Exception Type: System.NullReferenceException
+
+Error Location : Object reference not set to an instance of an object.
+
+ Error Page Url: http://localhost:6492/
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

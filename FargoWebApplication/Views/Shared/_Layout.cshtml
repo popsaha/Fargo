@@ -1,14 +1,14 @@
 ﻿@using Fargo_DataAccessLayers;
 @using Fargo_Models;
-@{   
+@{
     List<RoleModuleMappingModel> LstNavigation = (List<RoleModuleMappingModel>)Session["LstMenu"];
     List<RoleModuleMappingModel> LstModule = null;
     List<RoleModuleMappingModel> LstMenu = null;
-    List<RoleModuleMappingModel> LstSubMenu = null; 
-    
-    LoginModel SessionInformation =null;    
+    List<RoleModuleMappingModel> LstSubMenu = null;
+
+    LoginModel SessionInformation = null;
     if (Session["SessionInformation"] == null)
-    { 
+    {
         <script>
             window.location.href = '/Login/Login';
         </script>
@@ -17,7 +17,7 @@
     {
         SessionInformation = (LoginModel)Session["SessionInformation"];
     }
-    
+
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +42,12 @@
 
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="~/Assets/css/bootstrap/css/bootstrap.min.css">
     <!-- themify-icons line icon -->
@@ -53,7 +59,7 @@
     <link rel="stylesheet" type="text/css" href="~/Assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="~/Assets/css/jquery.mCustomScrollbar.css">
     <link href="~/Assets/css/jquery-ui.css" rel="stylesheet" />
-  
+
 
     @*<link rel="icon" href="~/Assets/images/favicon.ico" type="image/x-icon">*@
     <link href="~/Assets/DataTable/Plugins/style.css" rel="stylesheet" />
@@ -62,18 +68,26 @@
         ._MenuHeight1 {
             font-family: 16px;
         }
+
+        .line-gradient {
+            width: 100%;
+            height: 0.5rem;
+            z-index: 1010;
+            background: linear-gradient(90deg, #9c8225, #e0c162);            
+        }
+        
     </style>
 
-    
+
 
 
 </head>
 <body>
     @*<div class="fixed-button">
-        <a href="https://codedthemes.com/item/gradient-able-admin-template" target="_blank" class="btn btn-md btn-primary">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
-        </a>
-    </div>*@
+            <a href="https://codedthemes.com/item/gradient-able-admin-template" target="_blank" class="btn btn-md btn-primary">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
+            </a>
+        </div>*@
     <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="loader-track">
@@ -84,8 +98,9 @@
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper">
-
-            <nav class="navbar header-navbar pcoded-header" style="background:#ced1ce">
+            
+            <nav class="navbar header-navbar pcoded-header" style="background:#ced1ce; font-family:'Montserrat', sans-serif;">
+                <div class=" line-gradient"></div>
                 <div class="navbar-wrapper">
                     <div class="navbar-logo">
                         <a class="mobile-menu" id="mobile-collapse" href="#!">
@@ -94,7 +109,7 @@
                         <div class="mobile-search">
                             <div class="header-search">
                                 <div class="main-search morphsearch-search">
-                                    <div class="input-group" >
+                                    <div class="input-group">
                                         <span class="input-group-addon search-close"><i class="ti-close" style="color:maroon"></i></span>
                                         <input type="text" class="form-control" placeholder="Enter Keyword">
                                         <span class="input-group-addon search-btn"><i class="ti-search" style="color:maroon"></i></span>
@@ -104,7 +119,7 @@
                         </div>
                         <a href="javascript:void(0)">
                             @*<img class="img-fluid" src="~/Assets/images/logo.png" alt="Theme-Logo" />*@
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img class="img-fluid" src="~/Images/FargoStar.jpg" alt="Theme-Logo" style="height:55px; width:70px" />
+                            <img class="img-fluid" src="~/Images/FargoLogo-bg.png" alt="Theme-Logo" style="height:55px; width:55px; margin-left:70px;" />
                         </a>
                         <a class="mobile-options">
                             <i class="ti-more"></i>
@@ -112,28 +127,29 @@
                     </div>
 
                     <div class="navbar-container container-fluid">
-                        <ul class="nav-left">
-                            <li>
-                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu" style="color:black"></i></a></div>
-                            </li>
-                            <li class="header-search">
-                                <div class="main-search morphsearch-search">
-                                    <div class="input-group">
-                                        <span class="input-group-addon searchs-close"><i class="ti-close" style="color:black"></i></span>
-                                        <input type="text" class="form-control" style="color:black">
-                                        <span class="input-group-addon searchs-btn"><i class="ti-search" style="color:black"></i></span>
+                        @*<ul class="nav-left">
+                                <li>
+                                    <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu" style="color:black"></i></a></div>
+                                </li>
+                                <li class="header-search">
+                                    <div class="main-search morphsearch-search">
+                                        <div class="input-group">
+                                            <span class="input-group-addon searchs-close"><i class="ti-close" style="color:black"></i></span>
+                                            <input type="text" class="form-control" style="color:black">
+                                            <span class="input-group-addon searchs-btn"><i class="ti-search" style="color:black"></i></span>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#!" onclick="javascript:toggleFullScreen()">
-                                    <i class="ti-fullscreen" style="color:black"></i>
-                                </a>
-                            </li>
-                        </ul>
+                                </li>
+                                <li>
+                                    <a href="#!" onclick="javascript:toggleFullScreen()">
+                                        <i class="ti-fullscreen" style="color:black"></i>
+                                    </a>
+                                </li>
+                            </ul>*@
                         <ul class="nav-right">
-                            <li><div>Last LoggedIn On: @SessionInformation.LAST_LOGGEDIN_ON</div>
-</li>
+                            <li>
+                                <div>Last Logged In : @SessionInformation.LAST_LOGGEDIN_ON</div>
+                            </li>
                             <li class="header-notification">
                                 <a href="#!">
                                     <i class="ti-bell" style="color:black"></i>
@@ -211,121 +227,122 @@
                     </div>
                 </div>
             </nav>
+
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
-                    <nav class="pcoded-navbar">
-                        
+                    <nav class="pcoded-navbar" style="font-family:'Montserrat', sans-serif;">
+
                         <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                         <div class="pcoded-inner-navbar main-menu">
-                           
+
                             @*<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation" style="text-transform:none">Dashboard</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li id="LstDashboard" style="background-color:#074434">
-                                    <a href="@Url.Action("Index", "Home")">
-                                        <span class="pcoded-micon"><i class="ti-home" style="color:white" id="lblHome"></i><b>D</b></span>
-                                        <span class="pcoded-mtext"><b><label style="color:white" id="lblDashboard">Dashboard</label></b></span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                             </ul>
-
-
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation" style="text-transform:none">Masters</div>
                                 <ul class="pcoded-item pcoded-left-item">
-                                   
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)">
-                                            <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                            <span class="pcoded-mtext"><b>Masters</b></span>
+                                    <li id="LstDashboard" style="background-color:#074434">
+                                        <a href="@Url.Action("Index", "Home")">
+                                            <span class="pcoded-micon"><i class="ti-home" style="color:white" id="lblHome"></i><b>D</b></span>
+                                            <span class="pcoded-mtext"><b><label style="color:white" id="lblDashboard">Dashboard</label></b></span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" ">
-                                                <a href="@Url.Action("Index","User")" class="selected">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">User Master</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="  ">
-                                                <a href="@Url.Action("Index","Role")">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Role Master</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class="  ">
-                                                <a href="@Url.Action("Index","Store")">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Store Master</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="@Url.Action("Tracking","Store")">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Slot Management</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-
-                                        </ul>
                                     </li>
-                                </ul>
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms" style="text-transform:none">Transaction</div>
-                                <ul class="pcoded-item pcoded-left-item">
+                                 </ul>
 
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" style="font-size:14px">
-                                            <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.basic-components.main"><b>Mapping</b></span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" ">
-                                                <a href="/Role/Mapping/" style="font-size:14px">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Role Module Mapping</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
 
-                                        </ul>
-                                    </li>
+                                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation" style="text-transform:none">Masters</div>
+                                    <ul class="pcoded-item pcoded-left-item">
 
-                                </ul>
-                             
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms" style="text-transform:none">Report</div>
-                                <ul class="pcoded-item pcoded-left-item">
+                                        <li class="pcoded-hasmenu">
+                                            <a href="javascript:void(0)">
+                                                <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                                <span class="pcoded-mtext"><b>Masters</b></span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li class=" ">
+                                                    <a href="@Url.Action("Index","User")" class="selected">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">User Master</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="  ">
+                                                    <a href="@Url.Action("Index","Role")">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Role Master</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="  ">
+                                                    <a href="@Url.Action("Index","Store")">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Store Master</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+                                                </li>
+                                                <li class=" ">
+                                                    <a href="@Url.Action("Tracking","Store")">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Slot Management</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+                                                </li>
 
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" style="font-size:14px">
-                                            <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.basic-components.main"><b>Report</b></span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" ">
-                                                <a href="/Report/Transaction/" style="font-size:14px">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Transaction</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="/Report/Void/" style="font-size:14px">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Void Transaction</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms" style="text-transform:none">Transaction</div>
+                                    <ul class="pcoded-item pcoded-left-item">
 
-                                        </ul>
-                                    </li>
+                                        <li class="pcoded-hasmenu">
+                                            <a href="javascript:void(0)" style="font-size:14px">
+                                                <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.main"><b>Mapping</b></span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li class=" ">
+                                                    <a href="/Role/Mapping/" style="font-size:14px">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Role Module Mapping</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+                                                </li>
 
-                                </ul>
+                                            </ul>
+                                        </li>
 
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other" style="text-transform:none">Other</div>*@
+                                    </ul>
+
+                                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms" style="text-transform:none">Report</div>
+                                    <ul class="pcoded-item pcoded-left-item">
+
+                                        <li class="pcoded-hasmenu">
+                                            <a href="javascript:void(0)" style="font-size:14px">
+                                                <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.main"><b>Report</b></span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li class=" ">
+                                                    <a href="/Report/Transaction/" style="font-size:14px">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Transaction</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+                                                </li>
+                                                <li class=" ">
+                                                    <a href="/Report/Void/" style="font-size:14px">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Void Transaction</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other" style="text-transform:none">Other</div>*@
 
 
                             @if (LstNavigation != null)
@@ -337,7 +354,7 @@
                                     <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms" style="text-transform:none">@ModuleName</div>
                                     if (ModuleName == "Dashboard")
                                     {
-                                         <ul class="pcoded-item pcoded-left-item">
+                                        <ul class="pcoded-item pcoded-left-item">
                                             <li id="LstDashboard" style="background-color:#074434">
                                                 <a href="@Url.Action("Index", "Home")">
                                                     <span class="pcoded-micon"><i class="ti-home" style="color:white" id="lblHome"></i><b>D</b></span>
@@ -348,180 +365,180 @@
                                         </ul>
                                     }
                                     else
-                                    { 
+                                    {
                                         <ul class="pcoded-item pcoded-left-item">
-                                    @{
-                                        List<long> LstMenuId = LstNavigation.ToList().Where(x => x.MODULE_ID == ModuleId && x.MODULE_ID != 1).Select(x => x.MENU_ID).Distinct().ToList();
-                                        foreach (long MenuId in LstMenuId)
-                                        {
-                                            string MenuName = LstNavigation.ToList().Where(x => x.MODULE_ID == ModuleId && x.MENU_ID == MenuId).Select(x => x.MENU_NAME).FirstOrDefault();
-                                             <li class="pcoded-hasmenu">
-                                                <a href="javascript:void(0)" style="font-size:14px">
-                                                    <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.main"><b>@MenuName</b></span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                                <ul class="pcoded-submenu">
-                                                    @{
-                                                        List<long> LstSubMenuId = LstNavigation.ToList().Where(x => x.MODULE_ID == ModuleId && x.MENU_ID == MenuId).Select(x => x.SUBMENU_ID).Distinct().ToList();
-                                                        foreach (long SubMenuId in LstSubMenuId)
-                                                        {
-                                                            RoleModuleMappingModel SubMenu = LstNavigation.ToList().Where(x => x.MODULE_ID == ModuleId && x.MENU_ID == MenuId && x.SUBMENU_ID == SubMenuId).FirstOrDefault();
-                                                            <li class=" ">
-                                                                     <a href="@SubMenu.URL" style="font-size:14px">
-                                                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">@SubMenu.DISPLAY</span>
+                                            @{
+                                                List<long> LstMenuId = LstNavigation.ToList().Where(x => x.MODULE_ID == ModuleId && x.MODULE_ID != 1).Select(x => x.MENU_ID).Distinct().ToList();
+                                                foreach (long MenuId in LstMenuId)
+                                                {
+                                                    string MenuName = LstNavigation.ToList().Where(x => x.MODULE_ID == ModuleId && x.MENU_ID == MenuId).Select(x => x.MENU_NAME).FirstOrDefault();
+                                                    <li class="pcoded-hasmenu">
+                                                        <a href="javascript:void(0)" style="font-size:15px;">
+                                                            <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                                            <span class="pcoded-mtext" data-i18n="nav.basic-components.main"><b>@MenuName</b></span>
+                                                            <span class="pcoded-mcaret"></span>
+                                                        </a>
+                                                        <ul class="pcoded-submenu">
+                                                            @{
+                                                                List<long> LstSubMenuId = LstNavigation.ToList().Where(x => x.MODULE_ID == ModuleId && x.MENU_ID == MenuId).Select(x => x.SUBMENU_ID).Distinct().ToList();
+                                                                foreach (long SubMenuId in LstSubMenuId)
+                                                                {
+                                                                    RoleModuleMappingModel SubMenu = LstNavigation.ToList().Where(x => x.MODULE_ID == ModuleId && x.MENU_ID == MenuId && x.SUBMENU_ID == SubMenuId).FirstOrDefault();
+                                                                    <li class=" ">
+                                                                        <a href="@SubMenu.URL" style="font-size:14px">
+                                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                                            <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">@SubMenu.DISPLAY</span>
+                                                                            <span class="pcoded-mcaret"></span>
+                                                                        </a>
+                                                                    </li>
+                                                                }
+                                                            }
+
+                                                        </ul>
+                                                    </li>
+                                                                }
+                                            }
+
+
+
+                                        </ul>
+                                                                        }
+                                                                    }
+                                                                }
+                                                                @*<div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms" style="text-transform:none">Transaction</div>
+                                                                    <ul class="pcoded-item pcoded-left-item">
+
+                                                                        <li class="pcoded-hasmenu">
+                                                                            <a href="javascript:void(0)" style="font-size:14px">
+                                                                                <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.main"><b>Mapping</b></span>
                                                                                 <span class="pcoded-mcaret"></span>
-                                                                      </a>
-                                                                </li>                                                       
-                                                        }
-                                                    }
-                                                    
-                                                </ul>
-                                            </li>
-                                        }
-                                    }
+                                                                            </a>
+                                                                            <ul class="pcoded-submenu">
+                                                                                <li class=" ">
+                                                                                    <a href="/Role/Mapping/" style="font-size:14px">
+                                                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Role Module Mapping</span>
+                                                                                        <span class="pcoded-mcaret"></span>
+                                                                                    </a>
+                                                                                </li>
 
-                                
+                                                                            </ul>
+                                                                        </li>
 
-                            </ul>
-                                    }
-                                }
-                            }
-                            @*<div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms" style="text-transform:none">Transaction</div>
-                            <ul class="pcoded-item pcoded-left-item">
+                                                                    </ul>*@
+                                                            </div>
+                                                        </nav>
+                                                        <div class="pcoded-content">
+                                                            <div class="pcoded-inner-content" style="font-family:'Open Sans', sans-serif;">
+                                                                @RenderBody()
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                                <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)" style="font-size:14px">
-                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main"><b>Mapping</b></span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="/Role/Mapping/" style="font-size:14px">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Role Module Mapping</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-
-                            </ul>*@                               
-</div>
-                    </nav>
-                    <div class="pcoded-content">
-                        <div class="pcoded-inner-content">
-                            @RenderBody()
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Warning Section Starts -->
-        <!-- Older IE warning message -->
-        <!--[if lt IE 9]>
-        <div class="ie-warning">
-            <h1>Warning!!</h1>
-            <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-            <div class="iew-container">
-                <ul class="iew-download">
-                    <li>
-                        <a href="http://www.google.com/chrome/">
-                            <img src="assets/images/browser/chrome.png" alt="Chrome">
-                            <div>Chrome</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.mozilla.org/en-US/firefox/new/">
-                            <img src="assets/images/browser/firefox.png" alt="Firefox">
-                            <div>Firefox</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.opera.com">
-                            <img src="assets/images/browser/opera.png" alt="Opera">
-                            <div>Opera</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.apple.com/safari/">
-                            <img src="assets/images/browser/safari.png" alt="Safari">
-                            <div>Safari</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                            <img src="assets/images/browser/ie.png" alt="">
-                            <div>IE (9 & above)</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <p>Sorry for the inconvenience!</p>
-        </div>
-        <![endif]-->
-        <!-- Warning Section Ends -->
-        <!-- Required Jquery -->
-        <script type="text/javascript" src="~/Assets/js/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="~/Assets/js/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="~/Assets/js/popper.js/popper.min.js"></script>
-        <script type="text/javascript" src="~/Assets/js/bootstrap/js/bootstrap.min.js"></script>
-        <!-- jquery slimscroll js -->
-        <script type="text/javascript" src="~/Assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
-        <!-- modernizr js -->
-        <script type="text/javascript" src="~/Assets/js/modernizr/modernizr.js"></script>
-        <!-- am chart -->
-        <script src="~/Assets/pages/widget/amchart/amcharts.min.js"></script>
-        <script src="~/Assets/pages/widget/amchart/serial.min.js"></script>
-        <!-- Chart js -->
-        <script type="text/javascript" src="~/Assets/js/chart.js/Chart.js"></script>
-        <!-- Todo js -->
-        <script type="text/javascript " src="~/Assets/pages/todo/todo.js "></script>
-        <!-- Custom js -->
-        <script type="text/javascript" src="~/Assets/pages/dashboard/custom-dashboard.min.js"></script>
-        <script type="text/javascript" src="~/Assets/js/script.js"></script>
-        <script type="text/javascript " src="~/Assets/js/SmoothScroll.js"></script>
-        <script src="~/Assets/js/pcoded.min.js"></script>
-        <script src="~/Assets/js/vartical-demo.js"></script>
-        <script src="~/Assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+                                            <!-- Warning Section Starts -->
+                                            <!-- Older IE warning message -->
+                                            <!--[if lt IE 9]>
+                                            <div class="ie-warning">
+                                                <h1>Warning!!</h1>
+                                                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+                                                <div class="iew-container">
+                                                    <ul class="iew-download">
+                                                        <li>
+                                                            <a href="http://www.google.com/chrome/">
+                                                                <img src="assets/images/browser/chrome.png" alt="Chrome">
+                                                                <div>Chrome</div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                                                <img src="assets/images/browser/firefox.png" alt="Firefox">
+                                                                <div>Firefox</div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="http://www.opera.com">
+                                                                <img src="assets/images/browser/opera.png" alt="Opera">
+                                                                <div>Opera</div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.apple.com/safari/">
+                                                                <img src="assets/images/browser/safari.png" alt="Safari">
+                                                                <div>Safari</div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                                                <img src="assets/images/browser/ie.png" alt="">
+                                                                <div>IE (9 & above)</div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <p>Sorry for the inconvenience!</p>
+                                            </div>
+                                            <![endif]-->
+                                            <!-- Warning Section Ends -->
+                                            <!-- Required Jquery -->
+                                            <script type="text/javascript" src="~/Assets/js/jquery/jquery.min.js"></script>
+                                            <script type="text/javascript" src="~/Assets/js/jquery-ui/jquery-ui.min.js"></script>
+                                            <script type="text/javascript" src="~/Assets/js/popper.js/popper.min.js"></script>
+                                            <script type="text/javascript" src="~/Assets/js/bootstrap/js/bootstrap.min.js"></script>
+                                            <!-- jquery slimscroll js -->
+                                            <script type="text/javascript" src="~/Assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+                                            <!-- modernizr js -->
+                                            <script type="text/javascript" src="~/Assets/js/modernizr/modernizr.js"></script>
+                                            <!-- am chart -->
+                                            <script src="~/Assets/pages/widget/amchart/amcharts.min.js"></script>
+                                            <script src="~/Assets/pages/widget/amchart/serial.min.js"></script>
+                                            <!-- Chart js -->
+                                            <script type="text/javascript" src="~/Assets/js/chart.js/Chart.js"></script>
+                                            <!-- Todo js -->
+                                            <script type="text/javascript " src="~/Assets/pages/todo/todo.js "></script>
+                                            <!-- Custom js -->
+                                            <script type="text/javascript" src="~/Assets/pages/dashboard/custom-dashboard.min.js"></script>
+                                            <script type="text/javascript" src="~/Assets/js/script.js"></script>
+                                            <script type="text/javascript " src="~/Assets/js/SmoothScroll.js"></script>
+                                            <script src="~/Assets/js/pcoded.min.js"></script>
+                                            <script src="~/Assets/js/vartical-demo.js"></script>
+                                            <script src="~/Assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 
 
-        @*<script src="~/Assets/DataTable/popper.min.js"></script>*@
-        @*<script src="~/Assets/DataTable/perfect-scrollbar.min.js"></script>*@
-        @*<script src="~/Assets/DataTable/bootstrap.min.js"></script>*@
-        @*<script src="~/Assets/DataTable/pcoded.js"></script>*@
-        <script src="~/Assets/DataTable/simple-datatables.js"></script>
-        @*<script>
-            const dataTable = new simpleDatatables.DataTable("#pc-dt-simple");
-        </script>*@
-        @*<script src="~/Assets/DataTable/menu-setting.js"></script>*@
+                                            @*<script src="~/Assets/DataTable/popper.min.js"></script>*@
+                                            @*<script src="~/Assets/DataTable/perfect-scrollbar.min.js"></script>*@
+                                            @*<script src="~/Assets/DataTable/bootstrap.min.js"></script>*@
+                                            @*<script src="~/Assets/DataTable/pcoded.js"></script>*@
+                                            <script src="~/Assets/DataTable/simple-datatables.js"></script>
+                                            @*<script>
+                                                    const dataTable = new simpleDatatables.DataTable("#pc-dt-simple");
+                                                </script>*@
+                                            @*<script src="~/Assets/DataTable/menu-setting.js"></script>*@
 
 
 
-        
-        </div>
-</body>
 
-</html>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#LstDashboard').bind("mouseover", function () {
-            var color = $(this).css("color");
+                                        </div>
+                                    </body>
 
-            $("#lblHome, #lblDashboard").css("color", "#074434");
+                                </html>
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        $('#LstDashboard').bind("mouseover", function () {
+                                            var color = $(this).css("color");
 
-            $(this).bind("mouseout", function () {
-                $("#LstDashboard").css("background-color", "074434");
-                $("#lblHome, #lblDashboard").css("color", "white");
-            })
+                                            $("#lblHome, #lblDashboard").css("color", "#074434");
 
-            //LstDashboard lblHome lblDashboard
-        })
+                                            $(this).bind("mouseout", function () {
+                                                $("#LstDashboard").css("background-color", "074434");
+                                                $("#lblHome, #lblDashboard").css("color", "white");
+                                            })
 
-     
-    })
-</script>
+                                            //LstDashboard lblHome lblDashboard
+                                        })
+
+
+                                    })
+                                </script>
